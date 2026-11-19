@@ -102,8 +102,8 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .construct line{stroke:var(--blue);stroke-width:1}
 .construct .dim line{stroke:var(--red)}
 .construct text{font-family:var(--mono);font-size:12px;fill:var(--red)}
-.redline{position:relative;margin-top:36px;max-width:30ch;width:fit-content}
-.redline p{font-size:clamp(20px,1.9vw,28px);line-height:1.35;font-weight:500}
+.redline{position:relative;margin-top:36px;max-width:40ch;width:fit-content}
+.redline p{font-size:clamp(19px,1.7vw,25px);line-height:1.35;font-weight:500}
 .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
 .fig{position:relative;align-self:end}
 .fig .frame{position:relative;aspect-ratio:4/5;overflow:hidden}
@@ -191,7 +191,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .bldg .ground{stroke:var(--ink);stroke-width:2}
 .bldg .earth{fill:url(#earth)}
 .bldg .person{fill:none;stroke:var(--ink);stroke-width:2}
-.floorcopy{position:relative;min-height:320px}
+.floorcopy{position:relative;min-height:480px}
 .floorcopy article{position:absolute;inset:0;opacity:0;visibility:hidden}
 .floorcopy article.on{opacity:1;visibility:visible}
 .floorcopy .yr{font-weight:200;font-stretch:62%;font-size:clamp(100px,14vw,230px);line-height:.85;color:var(--ink)}
@@ -366,6 +366,78 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 @media (max-width:960px){.chips{display:flex}}
 .coord{opacity:0;transition:opacity .2s}
 .coord.live{opacity:1}
+
+/* ===== v6 ===== */
+.status{display:inline-flex;align-items:center;gap:8px}
+.status i{width:8px;height:8px;border-radius:50%;background:#2E9E5B;box-shadow:0 0 0 0 rgba(46,158,91,.5);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 8px rgba(46,158,91,0)}}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:34px;border-top:1.5px solid var(--ink)}
+.pillars article{padding:18px 18px 20px 0;border-bottom:1px solid var(--hair)}
+.pillars article:nth-child(odd){border-right:1px solid var(--hair)}
+.pillars article:nth-child(even){padding-left:18px}
+.pillars .mono{color:var(--red)}
+.pillars h3{font-size:clamp(24px,2.2vw,34px);font-weight:800;font-stretch:72%;line-height:1;margin:6px 0 8px}
+.pillars p{font-size:15.5px;color:#33373C;line-height:1.45}
+@media (max-width:620px){.pillars{grid-template-columns:1fr}.pillars article:nth-child(odd){border-right:0}.pillars article:nth-child(even){padding-left:0}}
+
+.bldgwrap{position:relative}
+.bldg .crn{stroke:var(--ink);stroke-width:3}
+.bldg .cable{stroke:var(--ink);stroke-width:1.2}
+.bldg .hookb{fill:var(--red)}
+#hook{animation:bob 3s ease-in-out infinite;transform-origin:230px 40px}
+@keyframes bob{50%{transform:rotate(3deg)}}
+.bldg .fl-plan rect.sl{fill:none;stroke:var(--blue);stroke-width:1.5;stroke-dasharray:6 5}
+.bldg .fl-plan .win{stroke:var(--blue);opacity:.5;stroke-dasharray:3 3}
+.bldg .fl-built rect.sl{fill:var(--ink)}
+.bldg .fl-built .win{stroke:var(--ink);opacity:.35}
+.bldg .fl-now rect.sl{fill:var(--red)}
+.bldg .fl-now .win{stroke:var(--red);opacity:1}
+.bldg .fl-now .bay{fill:rgba(226,64,47,.08)}
+.bldg .bay{fill:transparent;transition:fill .3s}
+.bldg .wl{stroke:var(--ink);stroke-width:4}
+.bldg .lvl{font-family:var(--mono);font-size:13px;fill:var(--grey)}
+.bldg .lvl.on{fill:var(--red);font-weight:500}
+.legend{display:flex;gap:16px;margin-top:10px;color:var(--grey)}
+.legend i{display:inline-block;width:18px;height:6px;margin-right:6px;vertical-align:middle}
+.lg-built{background:var(--ink)}.lg-now{background:var(--red)}.lg-plan{border:1.5px dashed var(--blue);height:8px!important}
+.floorcopy ul{list-style:none;margin-top:14px;border-top:1.5px solid var(--ink);max-width:560px}
+.floorcopy li{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--hair);font-size:16px;color:#33373C;line-height:1.4}
+.floorcopy li b{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--red);padding-top:3px}
+.floorcopy article.planned .yr{color:transparent;-webkit-text-stroke:1.5px var(--blue)}
+.floorcopy .yr small{color:var(--grey)}
+
+.street{position:relative;height:min(58vh,520px);margin-top:20px}
+.skyline{position:absolute;inset:0;width:100%;height:100%}
+.skyline .gl{stroke:var(--ink);stroke-width:3}
+.bld-row{position:absolute;left:0;right:0;bottom:20px;top:0;display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,2vw,34px);align-items:end;padding:0 clamp(0px,2vw,30px)}
+.bld{position:relative;height:var(--h);border:1.5px solid var(--ink);border-bottom:0;background:var(--sheet);cursor:pointer;transform-origin:bottom;transition:background .3s;font:inherit;color:inherit;padding:0;text-align:left}
+.bld::before{content:"";position:absolute;inset:12px 12px 0;background:repeating-linear-gradient(0deg,transparent 0 22px,rgba(127,167,217,.55) 22px 23.5px),repeating-linear-gradient(90deg,transparent 0 18px,rgba(127,167,217,.55) 18px 19.5px);transition:opacity .3s}
+.bld .door{position:absolute;bottom:0;left:50%;width:22px;height:34px;transform:translateX(-50%);border:1.5px solid var(--ink);border-bottom:0;background:var(--sheet)}
+.bld .num{position:absolute;left:0;right:0;bottom:calc(100% + 8px);text-align:center;font-weight:900;font-stretch:66%;font-size:clamp(28px,3.4vw,58px);line-height:1;font-variant-numeric:tabular-nums}
+.bld .lab{position:absolute;left:-6px;right:-6px;top:calc(100% + 30px);text-align:center;font-family:var(--mono);font-size:12px;color:var(--grey);line-height:1.3}
+.bld.on,.bld:hover{background:rgba(226,64,47,.07);border-color:var(--red)}
+.bld.on .num{color:var(--red)}
+.bld.on::before{background:repeating-linear-gradient(0deg,transparent 0 22px,rgba(226,64,47,.5) 22px 23.5px),repeating-linear-gradient(90deg,transparent 0 18px,rgba(226,64,47,.5) 18px 19.5px)}
+.scale{color:var(--grey);margin-top:74px}
+.bcard{margin-top:28px;border:1.5px solid var(--ink);padding:clamp(20px,2.4vw,34px);display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(20px,3vw,48px);align-items:start;min-height:220px}
+.bcard .tag{font-family:var(--mono);font-size:12px;color:var(--grey)}
+.bcard h3{font-size:clamp(34px,3.6vw,60px);font-weight:800;font-stretch:72%;line-height:.95;margin:8px 0 12px}
+.bcard p{color:#33373C}
+.bcard dl{display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--ink)}
+.bcard dl div{padding:12px 10px 0 0}
+.bcard dt{font-weight:800;font-stretch:72%;font-size:clamp(28px,2.6vw,42px);line-height:1;color:var(--red)}
+.bcard dd{font-size:13px;color:var(--grey);line-height:1.3;margin-top:4px}
+@media (max-width:860px){.bld .lab{font-size:10px}.bcard{grid-template-columns:1fr}.street{height:360px}}
+
+.pubgroups{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,4vw,64px);margin-top:clamp(50px,6vw,80px)}
+.pubgroups h3{padding-bottom:10px;border-bottom:1.5px solid var(--ink);font-weight:500}
+.pubgroups .pubs{margin-top:0}
+.pubs.compact{counter-reset:pc}
+.pubs.compact li{grid-template-columns:44px 1fr;padding:12px 0;counter-increment:pc}
+.pubs.compact li::before{content:counter(pc,decimal-leading-zero);font-family:var(--mono);font-size:12px;color:var(--grey);padding-top:4px}
+.pubs.compact b{font-size:clamp(16px,1.3vw,19px);font-weight:600}
+@media (max-width:860px){.pubgroups{grid-template-columns:1fr}}
+@media (max-width:620px){.bld .num{font-size:17px}.bld .lab{display:none}.scale{margin-top:18px}.bld-row{gap:8px}}
 /* JS-only hidden starts */
 .js .name .ln > span{transform:translateY(105%)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}#plot{display:none}}
@@ -386,10 +458,10 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 <div class="drawer" id="drawer"><ol>
   <button class="close" id="closeIdx">Close</button>
   <li><a href="#a000"><span>A-000</span>Cover</a></li>
-  <li><a href="#a100"><span>A-100</span>Brief</a></li>
+  <li><a href="#a100"><span>A-100</span>Why hire me</a></li>
   <li><a href="#a200"><span>A-200</span>Plan of work</a></li>
   <li><a href="#a300"><span>A-300</span>Section through time</a></li>
-  <li><a href="#a400"><span>A-400</span>Campus elevation</a></li>
+  <li><a href="#a400"><span>A-400</span>Elevation of trust</a></li>
   <li><a href="#a450"><span>A-450</span>Awards schedule</a></li>
   <li><a href="#a500"><span>A-500</span>Research</a></li>
   <li><a href="#a600"><span>A-600</span>Details</a></li>
@@ -406,15 +478,15 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 <!-- A-000 COVER -->
 <section class="sheet cover" id="a000" data-no="A-000" data-nm="Cover">
   <div class="top">
-    <span class="mono">Project: A career, in progress</span>
+    <span class="mono status"><i></i>Open to product roles from 2027</span>
     <span class="mono" style="color:var(--grey)">IIT Kharagpur · 22.3460° N, 87.2320° E</span>
   </div>
   <div class="namewrap">
     <svg class="construct" id="construct" aria-hidden="true"></svg>
     <h1 class="name" id="name" aria-label="W. Heramb"><span class="ln"><span>W.</span></span><span class="ln"><span>Heramb</span></span></h1>
     <div class="redline">
-      <p>IIT Kharagpur student who ships AI products. I lead Voice AI delivery at LimeChat and run Cura HealthTech.</p>
-      <div class="cta"><a class="btn primary" href="#a200">View my work</a><a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></div>
+      <p>IIT Kharagpur student building AI products people trust. I lead Voice AI delivery at LimeChat, founded Cura HealthTech, and represented 8,000+ students.</p>
+      <div class="cta"><a class="btn primary" href="#a100">Why hire me</a><a class="btn" href="#a200">See the work</a><a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></div>
     </div>
   </div>
   <figure class="fig">
@@ -426,24 +498,28 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   <div class="bottom">
     <div><small>Now</small><b>AI Product Manager Intern, LimeChat</b></div>
     <div><small>Venture</small><b>Founder &amp; CEO, Cura HealthTech</b></div>
-    <div><small>Distinction</small><b>Best All-Rounder, IIT KGP 2025</b></div>
+    <div><small>Represented</small><b>Undergraduate Representative, 8,000+ students</b></div>
     <div><small>Micro-specialisations</small><b>AI &amp; Applications; Entrepreneurship &amp; Innovation</b></div>
   </div>
 </section>
 
 
 <!-- A-100 BRIEF -->
-<section class="sheet" id="a100" data-no="A-100" data-nm="Brief">
-  <div class="sheet-head"><h2>The brief</h2><span class="mono">A-100<br>Who this is for</span></div>
+<section class="sheet" id="a100" data-no="A-100" data-nm="Why hire me">
+  <div class="sheet-head"><h2>Why hire me</h2><span class="mono">A-100<br>The 60-second read</span></div>
   <div class="brief">
     <div class="copy">
-      <p class="lede">Five years of architecture taught me to read a site before drawing a line. I bring the same habit to product.</p>
-      <p>At LimeChat I own Voice AI delivery end to end, from discovery and demos to go-live, analytics and the automation that makes agents faster to launch. Before that I built GTM strategy for a Fortune 500 HealthTech client at Frost &amp; Sullivan and fixed service-centre workflows from Maruti Suzuki’s CEO’s Office.</p>
-      <p>Outside work I’m building Cura HealthTech with a CTO and COO, and helping run placements for 5,500+ students at IIT Kharagpur.</p>
+      <p class="lede">I’m a builder who thinks like an architect: understand the people first, get the structure right, then ship. I’m looking for product roles from 2027.</p>
+      <div class="pillars">
+        <article><span class="mono">Ships</span><h3>AI in production</h3><p>Own Voice AI delivery at LimeChat, end to end. 100+ agents live across 6+ industries; the first intern ever to win Employee of the Month.</p></article>
+        <article><span class="mono">Builds</span><h3>From zero</h3><p>Founded Cura HealthTech with a CTO and COO. Three working prototypes, 2K+ pilot sessions, 200+ user surveys and 30+ doctor interviews.</p></article>
+        <article><span class="mono">Leads</span><h3>People at scale</h3><p>Undergraduate Representative for 8,000+ students, Placement Coordinator for 5,500+, and lead of a 50-student research programme.</p></article>
+        <article><span class="mono">Thinks</span><h3>Strategy and research</h3><p>GTM roadmaps for 12 countries at Frost &amp; Sullivan, BI from Maruti Suzuki’s CEO’s Office, and 15+ publications read 9,800+ times.</p></article>
+      </div>
     </div>
     <figure class="site">
       <img src="img/laughing.webp" alt="Heramb laughing in warm evening light">
-      <figcaption class="note">Site photo. First intern ever to win Employee of the Month at LimeChat.</figcaption>
+      <figcaption class="note">Easy to work with. Ask anyone I’ve shipped with.</figcaption>
     </figure>
   </div>
   <div class="dims">
@@ -536,44 +612,65 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 
 <!-- A-300 SECTION -->
 <section class="sheet section-sheet" id="a300" data-no="A-300" data-nm="Section through time">
-  <div class="sheet-head"><h2>Section through time</h2><span class="mono">A-300<br>One floor per year. Scroll to ride up.</span></div>
+  <div class="sheet-head"><h2>Section through time</h2><span class="mono">A-300<br>A building still under construction. Scroll to go up.</span></div>
   <div class="sec" id="sec">
-    <svg class="bldg" id="bldg" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-      <defs><pattern id="earth" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="12" stroke="#1B1E22" stroke-width="1"/></pattern></defs>
-      <rect class="earth" x="0" y="660" width="400" height="40"/>
-      <line class="ground" x1="0" y1="660" x2="400" y2="660"/>
-      <g id="floors"></g>
-      <rect class="shaft" x="250" y="60" width="44" height="600"/>
-      <rect class="car" id="car" x="254" y="580" width="36" height="70"/>
-      <path d="M150 20 L340 20 L340 60 L60 60 L60 20Z" fill="none" stroke="#1B1E22" stroke-width="2"/>
-    </svg>
+    <div class="bldgwrap">
+      <svg class="bldg" id="bldg" viewBox="0 0 420 760" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs><pattern id="earth" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="12" stroke="#1B1E22" stroke-width="1"/></pattern></defs>
+        <g id="crane"><line x1="330" y1="40" x2="330" y2="130" class="crn"/><line x1="200" y1="40" x2="400" y2="40" class="crn"/><line x1="330" y1="40" x2="370" y2="20" class="crn"/><line x1="370" y1="20" x2="400" y2="40" class="crn"/><g id="hook"><line x1="230" y1="40" x2="230" y2="88" class="cable"/><rect x="221" y="88" width="18" height="10" class="hookb"/></g></g>
+        <rect class="earth" x="0" y="720" width="420" height="40"/>
+        <line class="ground" x1="0" y1="720" x2="420" y2="720"/>
+        <g id="floors"></g>
+        <rect class="shaft" x="270" y="140" width="40" height="580"/>
+        <rect class="car" id="car" x="273" y="640" width="34" height="60"/>
+      </svg>
+      <div class="legend mono"><span><i class="lg-built"></i>Built</span><span><i class="lg-now"></i>Now</span><span><i class="lg-plan"></i>Planned</span></div>
+    </div>
     <div class="floorcopy" id="floorcopy">
-      <article data-l="0"><div class="yr">2020<small>ground</small></div><h3>Kashinath Palod Public School, Jalgaon</h3><p>CBSE with 95.2%. International Rank 28 among 1,000,000+ students in the National Science Olympiad, and Rank 90 among 500,000+ in the International General Knowledge Olympiad.</p></article>
-      <article data-l="1"><div class="yr">2022<small>L1</small></div><h3>Into IIT Kharagpur</h3><p>HSC with 80% from Chhatrapati Shivaji Maharaj Junior Science College, Jalgaon, then the five-year Bachelor’s with Honours in architecture at IIT Kharagpur.</p></article>
-      <article data-l="2"><div class="yr">2023<small>L2</small></div><h3>Space, Hong Kong and markets</h3><p>Became Executive Head of spAts at the Kalpana Chawla Space Technology Cell. Selected as a delegate to the Harvard Project for Asian and International Relations in Hong Kong, representing India. 2nd nationally among 60,000+ in the StockGro trading simulation.</p></article>
-      <article data-l="3"><div class="yr">2024<small>L3</small></div><h3>First internship, first company</h3><p>Business Analyst Intern in Maruti Suzuki’s CEO’s Office. Appointed Undergraduate Representative for 8,000+ students. Runners-up at the Stratagem national finals. Founded Cura HealthTech in October.</p></article>
-      <article data-l="4"><div class="yr">2025<small>L4</small></div><h3>Strategy, and a gold</h3><p>Growth Advisory Intern at Frost &amp; Sullivan. Contingent Gold at Inter IIT Tech Meet 13.0 with a record 1,300+ point margin, and Silver in ISRO’s high-prep problem statement. Best All-Rounder Student Award.</p><img src="img/auroville.webp" alt="Heramb in an IIT Kharagpur hoodie at the Matrimandir, Auroville" loading="lazy"></article>
-      <article data-l="5"><div class="yr">2026<small>L5</small></div><h3>Voice AI, at scale</h3><p>AI Product Manager Intern at LimeChat in Bengaluru, and the first intern ever to earn Employee of the Month. Student Placement Coordinator at the Career Development Centre.</p></article>
-      <article data-l="6"><div class="yr">2027<small>roof</small></div><h3>Roof: the view ahead</h3><p>Graduating from IIT Kharagpur and sitting the CFA Level 1 exam in February. Looking for product roles where hard technology meets people who need it to just work.</p><img src="img/horizon.webp" alt="Heramb seen from behind looking over green hills" loading="lazy" style="object-position:50% 40%"></article>
+      <article data-l="0" data-y="2020"><div class="yr">2020<small>Ground floor</small></div><h3>Foundations</h3><ul>
+        <li><b>Study</b>CBSE, Kashinath Palod Public School, Jalgaon: 95.2%</li>
+        <li><b>Win</b>International Rank 28 of 1,000,000+ in the National Science Olympiad</li>
+        <li><b>Win</b>Rank 90 of 500,000+ in the International General Knowledge Olympiad</li>
+        <li><b>Sport</b>Five years of U-12 to U-17 cricket for school and Jalgaon district</li></ul></article>
+      <article data-l="1" data-y="2022"><div class="yr">2022<small>Level 1</small></div><h3>Into IIT Kharagpur</h3><ul>
+        <li><b>Study</b>HSC with 80%, Chhatrapati Shivaji Maharaj Junior Science College</li>
+        <li><b>Study</b>Five-year Bachelor’s with Honours in architecture at IIT Kharagpur</li></ul></article>
+      <article data-l="2" data-y="2023"><div class="yr">2023<small>Level 2</small></div><h3>Space, Hong Kong, markets</h3><ul>
+        <li><b>Lead</b>Executive Head, spAts, Kalpana Chawla Space Technology Cell</li>
+        <li><b>Global</b>Delegate at Harvard’s HPAIR conference in Hong Kong, representing India</li>
+        <li><b>Win</b>2nd of 60,000+ in the StockGro trading simulation</li></ul></article>
+      <article data-l="3" data-y="2024"><div class="yr">2024<small>Level 3</small></div><h3>First job, first company, first mandate</h3><ul>
+        <li><b>Work</b>Business Analyst Intern, Maruti Suzuki CEO’s Office</li>
+        <li><b>Lead</b>Undergraduate Representative for 8,000+ students</li>
+        <li><b>Venture</b>Founded Cura HealthTech in October</li>
+        <li><b>Research</b>11 papers published by the spAts research programme</li>
+        <li><b>Win</b>Runners-up, Stratagem national finals</li></ul></article>
+      <article data-l="4" data-y="2025"><div class="yr">2025<small>Level 4</small></div><h3>Strategy, and a gold</h3><ul>
+        <li><b>Work</b>Growth Advisory Intern, Frost &amp; Sullivan</li>
+        <li><b>Win</b>Contingent Gold, Inter IIT Tech Meet 13.0, by a record 1,300+ points</li>
+        <li><b>Research</b>Two architecture papers and a book chapter</li>
+        <li><b>Win</b>Best All-Rounder Student Award</li></ul></article>
+      <article data-l="5" data-y="2026"><div class="yr">2026<small>Level 5</small></div><h3>Voice AI, at scale</h3><ul>
+        <li><b>Work</b>AI Product Manager Intern, LimeChat; Employee of the Month</li>
+        <li><b>Lead</b>Student Placement Coordinator, Career Development Centre</li>
+        <li><b>Venture</b>Cura HealthTech recognised by Elevation, Nexus and other VCs</li></ul></article>
+      <article data-l="6" data-y="2027" class="planned"><div class="yr">2027<small>Under construction</small></div><h3>The next floor is yours to build</h3><ul>
+        <li><b>Study</b>Graduating from IIT Kharagpur; CFA Level 1 in February</li>
+        <li><b>Next</b>Open to product roles where hard technology meets real users</li></ul>
+        <a class="btn primary" href="#a800" style="margin-top:18px">Talk to me</a></article>
     </div>
   </div>
 </section>
 
 <!-- A-400 ELEVATION -->
-<section class="sheet" id="a400" data-no="A-400" data-nm="Campus elevation">
-  <div class="sheet-head"><h2>Campus elevation</h2><span class="mono">A-400<br>Positions of responsibility, IIT KGP</span></div>
-  <p class="lede" style="margin-bottom:clamp(90px,10vw,140px)">As one of the 22-member Placement Committee at the Career Development Centre, my job is to make sure the right companies show up for 5,500+ students. Drawn to scale:</p>
-  <div class="elev" id="elev">
-    <div class="tower" style="--h:34%"><b data-count="120" data-suffix="+">120+</b></div>
-    <div class="tower" style="--h:100%"><b data-count="350" data-suffix="+">350+</b></div>
-    <div class="tower" style="--h:16%"><b data-count="25" data-suffix="+">25+</b></div>
-    <div class="tower" style="--h:18%"><b data-count="30" data-suffix="+">30+</b></div>
+<section class="sheet" id="a400" data-no="A-400" data-nm="Elevation of trust">
+  <div class="sheet-head"><h2>Elevation of trust</h2><span class="mono">A-400<br>Each building is a group that chose me to lead.<br>Height drawn to scale: people served.</span></div>
+  <div class="street" id="street" role="group" aria-label="Leadership roles. Choose a building to read about it.">
+    <svg class="skyline" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="500" x2="1200" y2="500" class="gl"/></svg>
+    <div class="bld-row" id="bldRow"></div>
   </div>
-  <div class="elev-labels"><p>recruiters onboarded</p><p>executives engaged</p><p>dormant recruiters revived</p><p>new firms in dialogue</p></div>
-  <div class="por">
-    <article><span class="mono">Jun 2024 to May 2025</span><h3>Undergraduate Representative</h3><p>Appointed by the HoD and a faculty panel to represent 8,000+ undergraduates. Drove 8+ welfare reforms through 30+ meetings with deans, including dual-degree conversion relaxations and deregistration waivers, and helped run the 70th Convocation for 5,000+ attendees.</p></article>
-    <article><span class="mono">Feb 2023 to May 2025</span><h3>Executive Head, spAts &amp; NSSC’24</h3><p>Secured 37+ sponsors with 300% year-on-year funding growth, ran two celebrity talk shows reaching 12,000,000+ followers, and led a 12-group research programme of 50+ students that published 11 papers.</p></article>
-  </div>
+  <div class="scale mono" aria-hidden="true">Log scale, 4 to 8,000 people. Tap a building for details.</div>
+  <div class="bcard" id="bcard" aria-live="polite"></div>
 </section>
 
 <!-- A-450 SCHEDULE -->
@@ -607,19 +704,35 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 
 <!-- A-500 RESEARCH -->
 <section class="sheet" id="a500" data-no="A-500" data-nm="Research">
-  <div class="sheet-head"><h2>Research</h2><span class="mono">A-500<br>Publications</span></div>
+  <div class="sheet-head"><h2>Research</h2><span class="mono">A-500<br>14 papers and a book chapter</span></div>
   <div class="rstats">
     <div><b data-count="15" data-suffix="+">15+</b>publications</div>
-    <div><b data-count="7000" data-suffix="+">7,000+</b>full-text reads</div>
+    <div><b data-count="9800" data-suffix="+">9,800+</b>reads on ResearchGate</div>
     <div><b data-count="3">3</b>book chapters</div>
     <div><b data-count="3">3</b>conferences</div>
-    <div><b>81.1</b>research interest score</div>
+    <div><b data-count="50" data-suffix="+">50+</b>students in the programme I led</div>
   </div>
-  <ol class="pubs">
-    <li><span class="mono">2025</span><div><b>Italian Architecture, Green Initiatives and Well Being of Human Beings</b><p>Warke, H., Mishra, T. Chapter 24, Sustainable Development Goal Series.</p></div></li>
-    <li><span class="mono">2024</span><div><b>Technology Pertaining to Interstellar Travel and the Current Human Standing</b><p>Warke, H., Sharma, S., Verma, A., Barman, A. ASRJETS Vol. 98.</p></div></li>
-  </ol>
-  <a class="btn" href="https://www.researchgate.net/profile/Heramb-Warke" target="_blank" rel="noopener" style="margin-top:28px">All publications on ResearchGate</a>
+  <div class="pubgroups">
+    <div><h3 class="mono">Architecture &amp; the built environment</h3><ol class="pubs">
+      <li><span class="mono">2025</span><div><b>Occupancy Pattern Detection and Energy–IAQ Analysis in Office Spaces</b><p>Warke, H., Verma, P., Sameera, S. Data-driven study of occupancy, indoor air quality and energy use.</p></div></li>
+      <li><span class="mono">2025</span><div><b>A Critical Architectural and Historical Appraisal of Our Lady of Angels Church, Pondicherry</b><p>Warke, H. French colonial ecclesiastical architecture in India.</p></div></li>
+      <li><span class="mono">2025</span><div><b>Italian Architecture, Green Initiatives and Well Being of Human Beings</b><p>Warke, H., Mishra, T. Chapter 24, Sustainable Development Goal Series.</p></div></li>
+    </ol></div>
+    <div><h3 class="mono">Space science &amp; economics · spAts, 2024</h3><ol class="pubs compact">
+      <li><div><b>Astro-Economics: Unraveling the Financial Dimensions of Space Endeavors</b></div></li>
+      <li><div><b>The Future of Space Tourism: An In-depth Literature Review</b></div></li>
+      <li><div><b>Technology Pertaining to Interstellar Travel and the Current Human Standing</b><p>ASRJETS Vol. 98</p></div></li>
+      <li><div><b>The Future of Rocket Propulsion: Rotating Detonation Engines</b></div></li>
+      <li><div><b>Manufacturing Pharmaceuticals in Microgravity and Space</b></div></li>
+      <li><div><b>Comprehensive Research on Satellite Launch Mechanics</b></div></li>
+      <li><div><b>Effectiveness of CMBR Data in Constraining Cosmic Structure</b></div></li>
+      <li><div><b>Beyond the Visible: Dark Matter Theories and Experiments</b></div></li>
+      <li><div><b>Analysing the Research on Size of the Universe</b></div></li>
+      <li><div><b>A Review on Challenges to Night Sky Observations</b></div></li>
+      <li><div><b>Searching for a Voice in the Eternal Silence: Extraterrestrial Intelligence</b></div></li>
+    </ol></div>
+  </div>
+  <a class="btn" href="https://www.researchgate.net/profile/Heramb-Warke" target="_blank" rel="noopener" style="margin-top:28px">Read them on ResearchGate</a>
 </section>
 
 <!-- A-600 DETAILS -->
@@ -751,16 +864,33 @@ if('IntersectionObserver' in window&&!reduce){new IntersectionObserver(es=>es.fo
 $('#plan').addEventListener('focusout',e=>{if(!$('#plan').contains(e.relatedTarget))show(pinned)});
 
 /* ---------- section floors ---------- */
-const floors=$('#floors');const arts=$$('#floorcopy article');const N=arts.length,top=60,bot=660,fh=(bot-top)/N,ch=fh*.7;
+const floors=$('#floors');const arts=$$('#floorcopy article');const N=arts.length,top=140,bot=720,fh=(bot-top)/N,ch=fh*.72;
 const carY=p=>bot-fh+(fh-ch)/2-p*fh*(N-1);
 $('#car').setAttribute('height',ch);$('#car').setAttribute('y',carY(0));
-let fl='';for(let i=0;i<N;i++){const y=bot-i*fh;fl+=`<rect class="slab" x="40" y="${y-6}" width="320" height="6"/><text class="lvl" data-l="${i}" x="0" y="${y-fh/2+4}">${arts[i].querySelector('.yr').firstChild.textContent}</text>`;}
-fl+=`<rect class="slab" x="40" y="${top-6}" width="320" height="6"/><line class="wallv" x1="40" y1="${top}" x2="40" y2="${bot}"/><line class="wallv" x1="360" y1="${top}" x2="360" y2="${bot}"/>`;
-for(let i=0;i<N;i++){const y=bot-i*fh;for(let w=0;w<3;w++)fl+=`<rect x="${70+w*55}" y="${y-fh+16}" width="34" height="${fh-34}" fill="none" stroke="#7FA7D9" stroke-width="1.2"/>`}
+let fl='';for(let i=0;i<N;i++){const y=bot-i*fh;let w='';for(let k=0;k<3;k++)w+=`<rect class="win" x="${70+k*58}" y="${y-fh+14}" width="38" height="${fh-30}" fill="none" stroke-width="1.2"/>`;
+  fl+=`<g class="fl fl-plan" data-l="${i}"><rect class="bay" x="40" y="${y-fh}" width="320" height="${fh}"/>${w}<line class="wl" x1="40" y1="${y-fh}" x2="40" y2="${y}"/><line class="wl" x1="360" y1="${y-fh}" x2="360" y2="${y}"/><rect class="sl" x="34" y="${y-fh-3}" width="332" height="6"/></g><text class="lvl" data-l="${i}" x="372" y="${y-fh/2+4}">${arts[i].dataset.y}</text>`}
 floors.innerHTML=fl;
-const lvls=$$('#floors .lvl');
-function setFloor(i){arts.forEach(a=>a.classList.toggle('on',+a.dataset.l===i));lvls.forEach(l=>l.classList.toggle('on',+l.dataset.l===i))}
+const lvls=$$('#floors .lvl'),fls=$$('#floors .fl');
+function setFloor(i){arts.forEach(a=>a.classList.toggle('on',+a.dataset.l===i));lvls.forEach(l=>l.classList.toggle('on',+l.dataset.l===i));
+  fls.forEach(g=>{const l=+g.dataset.l;g.classList.toggle('fl-built',l<i);g.classList.toggle('fl-now',l===i);g.classList.toggle('fl-plan',l>i)})}
 setFloor(0);
+
+/* elevation of trust */
+const B=[
+ {k:'ug',n:8000,num:'8,000+',lab:'Undergraduate Representative',tag:'Jun 2024 to May 2025 · IIT Kharagpur',t:'Undergraduate Representative',d:'Appointed by the HoD and a faculty panel to speak for every undergraduate. I drove welfare reforms through meetings with the deans, including dual-degree conversion relaxations and deregistration waivers.',m:[['8,000+','students represented'],['8+','welfare reforms'],['30+','meetings with deans']]},
+ {k:'cdc',n:5500,num:'5,500+',lab:'Placement Coordinator, CDC',tag:'Jun 2026 to now · Career Development Centre',t:'Student Placement Coordinator',d:'Selected by professors and deans to drive recruitment for 5,500+ students, as one of the 22-member Placement Committee linking the CDC, students and companies.',m:[['120+','recruiters onboarded'],['350+','executives engaged'],['25+','dormant recruiters revived']]},
+ {k:'conv',n:5000,num:'5,000+',lab:'70th Convocation',tag:'2024–25 · as UG Representative',t:'70th Convocation',d:'Helped run IIT Kharagpur’s 70th Convocation for 5,000+ attendees as part of the student representation team.',m:[['5,000+','attendees'],['70th','convocation'],['1','day to get right']]},
+ {k:'spats',n:50,num:'50+',lab:'Executive Head, spAts',tag:'Feb 2023 to May 2025 · ISRO & IIT KGP space cell',t:'Executive Head, spAts & NSSC’24',d:'Led sponsorship, marketing and research for the National Students Space Challenge: a 12-group research programme, two celebrity talk shows and the spAts Journal.',m:[['50+','student researchers'],['37+','sponsors; 300% YoY'],['12M+','followers reached']]},
+ {k:'mentor',n:4,num:'4',lab:'Student Mentor',tag:'IIT Kharagpur',t:'Student Mentor',d:'Mentored four freshers through their first year. The smallest building on this street, and one of the most rewarding.',m:[['4','freshers mentored'],['1','year each'],['∞','chai']]}
+];
+const row=$('#bldRow'),card=$('#bcard');
+row.innerHTML=B.map(b=>{const h=Math.max(.12,Math.log10(b.n)/Math.log10(10000))*100;return `<button class="bld" data-k="${b.k}" style="--h:${h}%" aria-label="${b.lab}, ${b.num}"><span class="num">${b.num}</span><span class="door"></span><span class="lab">${b.lab}</span></button>`}).join('');
+let bcur=null;function bshow(k){if(k===bcur)return;bcur=k;const b=B.find(x=>x.k===k);$$('.bld').forEach(x=>x.classList.toggle('on',x.dataset.k===k));
+  const html=`<div><span class="tag">${b.tag}</span><h3>${b.t}</h3><p>${b.d}</p></div><dl>${b.m.map(x=>`<div><dt>${x[0]}</dt><dd>${x[1]}</dd></div>`).join('')}</dl>`;
+  if(window.gsap&&!reduce){gsap.timeline().to(card,{opacity:0,y:8,duration:.15}).add(()=>card.innerHTML=html).to(card,{opacity:1,y:0,duration:.35,ease:'expo.out'})}else card.innerHTML=html}
+let bpin='ug';bshow('ug');
+$$('.bld').forEach(x=>{x.addEventListener('pointerenter',()=>bshow(x.dataset.k));x.addEventListener('pointerleave',()=>bshow(bpin));x.addEventListener('focus',()=>bshow(x.dataset.k));x.addEventListener('click',()=>{bpin=x.dataset.k;bshow(bpin)})});
+row.addEventListener('focusout',e=>{if(!row.contains(e.relatedTarget))bshow(bpin)});
 
 /* ---------- crosshair ---------- */
 if(fine){
@@ -863,11 +993,13 @@ mm.add('(min-width:861px)',()=>{
   const car=$('#car');let last=-1;
   ScrollTrigger.create({trigger:'#sec',start:'center center',end:'+='+(innerHeight*3.8),pin:true,scrub:true,anticipatePin:1,
     onUpdate:s=>{const p=s.progress;gsap.set(car,{attr:{y:carY(p)}});const i=Math.min(N-1,Math.round(p*(N-1)));
-      if(i!==last){const prev=arts[last],next=arts[i];last=i;setFloor(i);gsap.fromTo($$('.yr, h3, p, img',next),{y:30,opacity:0},{y:0,opacity:1,stagger:.06,duration:.6,ease:'expo.out',overwrite:true})}}});
+      if(i!==last){const prev=arts[last],next=arts[i];last=i;setFloor(i);gsap.fromTo($$('.yr, h3, li, a',next),{y:30,opacity:0},{y:0,opacity:1,stagger:.06,duration:.6,ease:'expo.out',overwrite:true})}}});
 });
 
 /* elevation towers rise */
-gsap.from('.tower',{scaleY:0,duration:1.6,stagger:.12,ease:'expo.out',scrollTrigger:{trigger:'#elev',start:'top 75%'}});
+gsap.from('.bld',{scaleY:0,duration:1.6,stagger:.12,ease:'expo.out',scrollTrigger:{trigger:'#street',start:'top 75%'}});
+gsap.from('.bld .num, .bld .lab',{opacity:0,y:10,stagger:.05,duration:.6,delay:.9,scrollTrigger:{trigger:'#street',start:'top 75%'}});
+gsap.from('#bcard',{y:40,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:'#bcard',start:'top 90%'}});
 $$('[data-count]').forEach(el=>{if(el.closest('.dimline'))return;const end=+el.dataset.count,suf=el.dataset.suffix||'',o={v:0};
   gsap.to(o,{v:end,duration:2,ease:'expo.out',scrollTrigger:{trigger:el.closest('section'),start:'top 40%'},onUpdate:()=>el.textContent=fmt(Math.round(o.v))+suf})});
 gsap.from('.award .delta',{scale:0,rotate:-90,duration:.9,ease:'back.out(2)',scrollTrigger:{trigger:'.award',start:'top 75%'},delay:1.2});
