@@ -89,7 +89,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .sheet-head h2{font-size:clamp(44px,7vw,120px);font-weight:800;font-stretch:70%;line-height:.9;letter-spacing:-.01em}
 .sheet-head .mono{color:var(--grey);text-align:right}
 .lede{font-size:clamp(20px,1.8vw,27px);line-height:1.4;max-width:36ch}
-.note{font-family:var(--mono);font-size:13px;color:var(--red)}
+.note{font-family:var(--mono);font-size:13px;color:var(--grey)}
 
 /* ---------- A-000 cover ---------- */
 .cover{min-height:calc(100svh - 2*var(--m));display:grid;grid-template-columns:1fr minmax(240px,30%);grid-template-rows:auto 1fr auto;gap:clamp(24px,3vw,48px)}
@@ -104,8 +104,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .construct text{font-family:var(--mono);font-size:12px;fill:var(--red)}
 .redline{position:relative;margin-top:36px;max-width:30ch;width:fit-content}
 .redline p{font-size:clamp(20px,1.9vw,28px);line-height:1.35;font-weight:500}
-.redline svg{position:absolute;left:-22px;top:-18px;width:calc(100% + 44px);height:calc(100% + 36px);overflow:visible;pointer-events:none}
-.redline path{fill:none;stroke:var(--red);stroke-width:2}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
 .fig{position:relative;align-self:end}
 .fig .frame{position:relative;aspect-ratio:4/5;overflow:hidden}
 .fig img{width:100%;height:100%;object-fit:cover;object-position:50% 15%;filter:grayscale(1) contrast(1.05);transition:filter .8s}
@@ -215,7 +214,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .elev-labels{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,30px);margin-top:12px}
 .elev-labels p{font-size:15px;color:var(--grey);text-align:center;line-height:1.35}
 .award{margin-top:clamp(70px,8vw,120px);display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,60px);align-items:center;position:relative}
-.award .cloudwrap{position:relative;padding:34px 44px}
+.award .cloudwrap{position:relative;padding:0}
 .award .cloudwrap svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .award .cloudwrap path{fill:none;stroke:var(--red);stroke-width:2.2}
 .award h3{font-size:clamp(40px,5.4vw,96px);font-weight:800;font-stretch:72%;line-height:.9}
@@ -346,8 +345,8 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .revs tr.star td{background:rgba(226,64,47,.1);color:var(--red);font-weight:500}
 
 /* ===== plan v2 ===== */
-.plan .chain line{stroke:var(--red);stroke-width:1.2}
-.plan .chain text{font-family:var(--mono);font-size:15px;fill:var(--red);text-anchor:middle}
+.plan .chain line{stroke:var(--grey);stroke-width:1.2}
+.plan .chain text{font-family:var(--mono);font-size:15px;fill:var(--grey);text-anchor:middle}
 .plan .glyph{fill:none;stroke:var(--blue);stroke-width:2.2;transition:stroke .3s}
 .plan .room.on .glyph,.plan .room:hover .glyph{stroke:var(--ink)}
 .plan .tagno circle{fill:var(--sheet);stroke:var(--ink);stroke-width:1.5;transition:fill .3s}
@@ -414,8 +413,8 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
     <svg class="construct" id="construct" aria-hidden="true"></svg>
     <h1 class="name" id="name" aria-label="W. Heramb"><span class="ln"><span>W.</span></span><span class="ln"><span>Heramb</span></span></h1>
     <div class="redline">
-      <svg aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><path id="redCircle" pathLength="1" d="M54 3 C82 3 99 22 99 50 C99 80 78 98 50 98 C20 98 1 79 1 50 C1 22 20 4 46 2 C52 2 58 4 62 7" vector-effect="non-scaling-stroke"/></svg>
-      <p>Architecture student at IIT Kharagpur who ships AI products. I lead Voice AI delivery at LimeChat and run Cura HealthTech.</p>
+      <p>IIT Kharagpur student who ships AI products. I lead Voice AI delivery at LimeChat and run Cura HealthTech.</p>
+      <div class="cta"><a class="btn primary" href="#a200">View my work</a><a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></div>
     </div>
   </div>
   <figure class="fig">
@@ -444,8 +443,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
     </div>
     <figure class="site">
       <img src="img/laughing.webp" alt="Heramb laughing in warm evening light">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><ellipse id="smile" cx="47" cy="54" rx="17" ry="10" pathLength="1" vector-effect="non-scaling-stroke"/></svg>
-      <figcaption class="note">Site photo. Redline: first intern ever to win Employee of the Month at LimeChat.</figcaption>
+      <figcaption class="note">Site photo. First intern ever to win Employee of the Month at LimeChat.</figcaption>
     </figure>
   </div>
   <div class="dims">
@@ -584,8 +582,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   <div class="award">
     <div class="delta"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4 60 58H4Z" fill="none" stroke="#E2402F" stroke-width="2.5"/><text x="32" y="48" text-anchor="middle" style="font-family:var(--mono);font-size:18px;fill:#E2402F">25</text></svg></div>
     <div class="cloudwrap">
-      <svg viewBox="0 0 400 160" preserveAspectRatio="none" aria-hidden="true"><path id="cloud" pathLength="1" vector-effect="non-scaling-stroke" d="M20 40 q10 -30 40 -20 q15 -25 45 -10 q20 -22 50 -6 q22 -20 52 -4 q25 -18 52 0 q28 -14 50 8 q30 0 30 30 q22 18 4 44 q10 30 -24 36 q-14 26 -46 14 q-22 22 -52 6 q-24 20 -52 4 q-26 18 -52 0 q-28 14 -48 -6 q-30 6 -36 -22 q-28 -10 -14 -40 q-16 -26 6 -40Z"/></svg>
-      <span class="note">Revision 2025, flagged for attention</span>
+      <span class="note">2025</span>
       <h3>Best All-Rounder Student Award</h3>
       <p style="color:var(--grey);margin-top:8px">IIT Kharagpur, chosen from a batch of 2,000+ students for academic and extracurricular excellence.</p>
     </div>
@@ -789,7 +786,7 @@ function drawConstruct(){
   let s='';let maxw=0;
   lines.forEach(l=>{const r=l.getBoundingClientRect();const fs=parseFloat(getComputedStyle(nm).fontSize);const base=r.top-wr.top+fs*.8;const cap=base-fs*.7;
     s+=`<line class="cl" x1="-40" x2="${wr.width+40}" y1="${base}" y2="${base}"/><line class="cl" x1="-40" x2="${wr.width+40}" y1="${cap}" y2="${cap}" stroke-dasharray="6 6"/>`;maxw=Math.max(maxw,r.width)});
-  const y=30;s+=`<g class="dim"><line x1="0" x2="${maxw}" y1="${y}" y2="${y}"/><line x1="0" x2="0" y1="${y-8}" y2="${y+8}"/><line x1="${maxw}" x2="${maxw}" y1="${y-8}" y2="${y+8}"/><text x="${maxw/2}" y="${y-8}" text-anchor="middle">${Math.round(maxw)} px wide, and growing</text></g>`;
+  
   cs.innerHTML=s;
 }
 document.fonts&&document.fonts.ready.then(drawConstruct);addEventListener('resize',drawConstruct);drawConstruct();
@@ -801,7 +798,7 @@ function setTB(s){const no=$('#tbNo'),n=$('#tbNm');if(no.textContent===s.dataset
   if(G){gsap.to([no,n],{yPercent:-100,duration:.25,ease:'power2.in',onComplete:()=>{no.textContent=s.dataset.no;n.textContent=s.dataset.nm;gsap.fromTo([no,n],{yPercent:100},{yPercent:0,duration:.45,ease:'expo.out'})}})}
   else{no.textContent=s.dataset.no;n.textContent=s.dataset.nm}}
 
-const tbEl=$('.tb');let tbT;addEventListener('scroll',()=>{tbEl.classList.add('away');clearTimeout(tbT);tbT=setTimeout(()=>tbEl.classList.remove('away'),650)},{passive:true});
+const tbEl=$('.tb');let tbT;const onCover=()=>scrollY<innerHeight*.6;tbEl.classList.toggle('away',onCover());addEventListener('scroll',()=>{tbEl.classList.add('away');clearTimeout(tbT);tbT=setTimeout(()=>tbEl.classList.toggle('away',onCover()),650)},{passive:true});
 /* ---------- fallback ---------- */
 if(!G){
   document.documentElement.classList.remove('js');document.documentElement.classList.add('no-intro');$('#plot').remove();
@@ -820,6 +817,7 @@ if(window.Lenis){lenis=new Lenis({lerp:.1});lenis.on('scroll',ScrollTrigger.upda
 const go=t=>lenis?lenis.scrollTo(t,{duration:1.6}):(typeof t==='number'?scrollTo({top:t,behavior:'smooth'}):t.scrollIntoView({behavior:'smooth'}));
 $$('.drawer a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();setDr(false);go($(a.getAttribute('href')))}));
 $('#toTop').onclick=()=>go(0);
+$$('.cta a[href^="#"]').forEach(x=>x.addEventListener('click',e=>{e.preventDefault();go($(x.getAttribute('href')))}));
 
 /* title block */
 
@@ -836,7 +834,6 @@ intro.to(pr,{strokeDashoffset:0,duration:1.5,ease:'power2.inOut'})
  .from('#a000',{y:60,duration:1,ease:'expo.out'},'-=.6')
  .to('.name .ln > span',{y:0,duration:1.2,stagger:.12,ease:'expo.out',onUpdate:drawConstruct},'-=.7')
  .from('#construct',{opacity:0,duration:.6},'-=.4')
- .fromTo('#redCircle',{strokeDasharray:1,strokeDashoffset:1},{strokeDashoffset:0,duration:1.1,ease:'power2.inOut'},'-=.3')
  .from('.fig .frame',{clipPath:'inset(0 0 100% 0)',duration:1.2,ease:'expo.inOut',clearProps:'clipPath'},'-=1.4')
  .from('.cover .bottom div, .cover .top',{y:20,opacity:0,stagger:.06,duration:.8,ease:'expo.out'},'-=1')
  .add(()=>{lenis&&lenis.start()});
@@ -848,7 +845,6 @@ gsap.to('.fig .frame img',{yPercent:12,scale:1.1,ease:'none',scrollTrigger:{trig
 $$('.sheet-head').forEach(h=>{gsap.from(h,{'--x':0,duration:1,scrollTrigger:{trigger:h,start:'top 85%'}});gsap.from($('h2',h),{yPercent:60,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:h,start:'top 85%'}});gsap.fromTo(h,{borderBottomColor:'transparent'},{borderBottomColor:'#1B1E22',duration:1,scrollTrigger:{trigger:h,start:'top 85%'}})});
 
 /* brief: smile ellipse + dimension lines */
-gsap.fromTo('#smile',{strokeDasharray:1,strokeDashoffset:1},{strokeDashoffset:0,duration:1.2,ease:'power2.inOut',scrollTrigger:{trigger:'.site',start:'top 60%'}});
 gsap.from('.site img',{clipPath:'inset(0 100% 0 0)',duration:1.3,ease:'expo.inOut',scrollTrigger:{trigger:'.site',start:'top 80%'}});
 $$('.dimline').forEach(d=>{const k=parseFloat(d.style.getPropertyValue('--len'));const dl=$('.dl',d),et=$('.endtick',d),v=$('.val',d);const o={p:0},end=+v.dataset.count,suf=v.dataset.suffix||'';
   gsap.to(o,{p:1,duration:1.8,ease:'expo.out',scrollTrigger:{trigger:d,start:'top 85%'},onUpdate:()=>{const x=(o.p*k*100)+'%';dl.setAttribute('x2',x);et.setAttribute('x1',x);et.setAttribute('x2',x);v.textContent=fmt(Math.round(o.p*end))+suf}})});
@@ -874,7 +870,6 @@ mm.add('(min-width:861px)',()=>{
 gsap.from('.tower',{scaleY:0,duration:1.6,stagger:.12,ease:'expo.out',scrollTrigger:{trigger:'#elev',start:'top 75%'}});
 $$('[data-count]').forEach(el=>{if(el.closest('.dimline'))return;const end=+el.dataset.count,suf=el.dataset.suffix||'',o={v:0};
   gsap.to(o,{v:end,duration:2,ease:'expo.out',scrollTrigger:{trigger:el.closest('section'),start:'top 40%'},onUpdate:()=>el.textContent=fmt(Math.round(o.v))+suf})});
-gsap.fromTo('#cloud',{strokeDasharray:1,strokeDashoffset:1},{strokeDashoffset:0,duration:1.6,ease:'power2.inOut',scrollTrigger:{trigger:'.award',start:'top 75%'}});
 gsap.from('.award .delta',{scale:0,rotate:-90,duration:.9,ease:'back.out(2)',scrollTrigger:{trigger:'.award',start:'top 75%'},delay:1.2});
 
 /* details */
