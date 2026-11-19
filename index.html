@@ -472,6 +472,18 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .streetB .bld .num{font-size:clamp(20px,2.2vw,36px)}
 .streetB + .bcard{margin-top:74px}
 @media (max-width:620px){.bld-row.six{grid-template-columns:repeat(3,1fr);row-gap:60px}.streetB{height:auto;min-height:520px}.streetB .bld{height:calc(var(--hn) * 1.5px)}.streetB .bld-row{position:relative;bottom:auto;padding-top:60px}.streetB .skyline{display:none}.streetB .bld .lab{display:block;font-size:10px;top:calc(100% + 6px)}.streetB + .bcard{margin-top:30px}}
+
+.bld-row.four{grid-template-columns:repeat(4,1fr)}
+.bld[style*="--h:0.6%"],.bld[style*="--h:0.4375%"]{min-height:3px}
+.featured-pub{display:block;text-decoration:none;margin-top:clamp(40px,5vw,70px);border:1.5px solid var(--ink);padding:clamp(20px,2.6vw,36px);background:var(--sheet);transition:background .15s ease-out,color .15s ease-out}
+.featured-pub .mono{color:var(--red)}
+.featured-pub b{display:block;font-size:clamp(34px,4vw,68px);font-weight:900;font-stretch:66%;line-height:.92;margin:10px 0 12px;text-transform:uppercase}
+.featured-pub p{max-width:60ch;color:#33373C}
+.featured-pub .go{display:inline-block;margin-top:14px;color:var(--ink);border-bottom:1.5px solid var(--red)}
+.featured-pub:hover{background:var(--ink);color:var(--sheet)}
+.featured-pub:hover p,.featured-pub:hover .go{color:var(--sheet)}
+.bld.tiny .door,.bld.tiny::before{display:none}
+.bld.tiny{border-width:1.5px}
 /* JS-only hidden starts */
 .js .name .ln > span{transform:translateY(105%)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}#plot{display:none}}
@@ -555,7 +567,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
     <article class="verb" data-k="ships"><h3 class="vw" aria-label="Ships"><span>Ships</span></h3><div class="vproof"><b class="vnum" data-count="100" data-suffix="+">100+</b><p>Voice AI agents live at LimeChat across 6+ industries. I own delivery end to end, and was the first intern ever to win Employee of the Month.</p></div></article>
     <article class="verb" data-k="builds"><h3 class="vw" aria-label="Builds"><span>Builds</span></h3><div class="vproof"><b class="vnum" data-count="2000" data-suffix="+">2,000+</b><p>Pilot sessions for Cura HealthTech, which I founded with a CTO and COO. Three working prototypes, 200+ user surveys, 30+ doctor interviews.</p></div></article>
     <article class="verb" data-k="leads"><h3 class="vw" aria-label="Leads"><span>Leads</span></h3><div class="vproof"><b class="vnum" data-count="8000" data-suffix="+">8,000+</b><p>Students represented as Undergraduate Representative. Now Placement Coordinator for 5,500+, and before that lead of a 50-student research programme.</p></div></article>
-    <article class="verb" data-k="thinks"><h3 class="vw" aria-label="Thinks"><span>Thinks</span></h3><div class="vproof"><b class="vnum" data-count="15" data-suffix="+">15+</b><p>Publications, read 9,800+ times. GTM roadmaps for 12 countries at Frost &amp; Sullivan, and BI from Maruti Suzuki’s CEO’s Office.</p></div></article>
+    <article class="verb" data-k="thinks"><h3 class="vw" aria-label="Thinks"><span>Thinks</span></h3><div class="vproof"><b class="vnum" data-count="15" data-suffix="+">15+</b><p>Publications, read 9,800+ times. Including a paper in Elsevier’s Energy &amp; Buildings. GTM roadmaps for 12 countries at Frost &amp; Sullivan, and BI from Maruti Suzuki’s CEO’s Office.</p></div></article>
   </div>
   <div class="dims">
     <div class="dimrow"><div class="dimline" style="--len:1"><span class="val" data-count="100000" data-suffix="+">1,00,000+</span><svg aria-hidden="true"><line class="dl" x1="0" y1="34" x2="100%" y2="34"/><line x1="0" y1="24" x2="0" y2="44"/><line class="endtick" x1="100%" y1="24" x2="100%" y2="44"/></svg></div><p>calls supported by the AI automation I built at LimeChat</p></div>
@@ -673,22 +685,26 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
       <article data-l="2" data-y="2023"><div class="yr">2023<small>Level 2</small></div><h3>Space, Hong Kong, markets</h3><ul>
         <li><b>Lead</b>Executive Head, spAts, Kalpana Chawla Space Technology Cell</li>
         <li><b>Global</b>Delegate at Harvard’s HPAIR conference in Hong Kong, representing India</li>
-        <li><b>Win</b>2nd of 60,000+ in the StockGro trading simulation</li></ul></article>
+        <li><b>Win</b>2nd of 60,000+ in the StockGro trading simulation</li>
+        <li><b>Research</b>Undergraduate Student Researcher on the economics of green buildings; 70+ papers screened</li></ul></article>
       <article data-l="3" data-y="2024"><div class="yr">2024<small>Level 3</small></div><h3>First job, first company, first mandate</h3><ul>
         <li><b>Work</b>Business Analyst Intern, Maruti Suzuki CEO’s Office</li>
         <li><b>Lead</b>Undergraduate Representative for 8,000+ students</li>
+        <li><b>Work</b>Product Management Intern, Refuel Tech: PRDs and prototypes from 50+ user interviews</li>
+        <li><b>Lead</b>Head of Sponsorship &amp; Marketing, NSSC: 37+ brand partners, up 185%</li>
         <li><b>Venture</b>Founded Cura HealthTech in October</li>
         <li><b>Research</b>11 papers published by the spAts research programme</li>
         <li><b>Win</b>Runners-up, Stratagem national finals</li></ul></article>
       <article data-l="4" data-y="2025"><div class="yr">2025<small>Level 4</small></div><h3>Strategy, and a gold</h3><ul>
         <li><b>Work</b>Growth Advisory Intern, Frost &amp; Sullivan</li>
         <li><b>Win</b>Contingent Gold, Inter IIT Tech Meet 13.0, by a record 1,300+ points</li>
-        <li><b>Research</b>Two architecture papers and a book chapter</li>
+        <li><b>Research</b>Paper in Elsevier’s Energy &amp; Buildings, plus a book chapter and two more papers</li>
         <li><b>Win</b>Best All-Rounder Student Award</li></ul></article>
       <article data-l="5" data-y="2026"><div class="yr">2026<small>Level 5</small></div><h3>Voice AI, at scale</h3><ul>
         <li><b>Work</b>AI Product Manager Intern, LimeChat; Employee of the Month</li>
         <li><b>Lead</b>Student Placement Coordinator, Career Development Centre</li>
-        <li><b>Venture</b>Cura HealthTech recognised by Elevation, Nexus and other VCs</li></ul></article>
+        <li><b>Venture</b>Cura HealthTech recognised by Elevation, Nexus and other VCs</li>
+        <li><b>Research</b>Researcher, Entrepreneurship Development Institute of India</li></ul></article>
       <article data-l="6" data-y="2027" class="planned"><div class="yr">2027<small>Under construction</small></div><h3>The next floor is yours to build</h3><ul>
         <li><b>Study</b>Graduating from IIT Kharagpur; CFA Level 1 in February</li>
         <li><b>Next</b>Something exciting, where hard technology meets real users. If that’s what you’re building, let’s connect.</li></ul>
@@ -699,18 +715,18 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 
 <!-- A-400 ELEVATION -->
 <section class="sheet" id="a400" data-no="A-400" data-nm="Elevation of trust">
-  <div class="sheet-head"><h2>Elevation of trust</h2><span class="mono">A-400<br>Elevation A: groups that chose me to lead.<br>Height follows people served (log scale).</span></div>
-  <h3 class="elev-a-head">Elevation A. Groups that chose me to lead</h3>
+  <div class="sheet-head"><h2>Elevation of trust</h2><span class="mono">A-400<br>Elevation A: groups that chose me to lead.<br>Both elevations drawn to scale.</span></div>
+  <h3 class="elev-a-head">Elevation A. People I’ve represented or led, drawn to scale</h3>
   <div class="street" id="street" role="group" aria-label="Leadership roles. Choose a building to read about it.">
     <svg class="skyline" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="500" x2="1200" y2="500" class="gl"/></svg>
     <div class="bld-row" id="bldRow"></div>
   </div>
-  <div class="scale mono" aria-hidden="true">Hover or tap any building for the details.</div>
+  <div class="scale mono" aria-hidden="true">Everything is drawn to scale, so the small ones really are small. Hover or tap any building for details.</div>
   <div class="bcard" id="bcard" aria-live="polite"></div>
-  <div class="elev-b-head"><h3>Elevation B. Teams I’ve played for</h3><span class="mono">Not to scale</span></div>
+  <div class="elev-b-head"><h3>Elevation B. My current role, Placement Coordinator: one season at the CDC</h3><span class="mono">Drawn to scale</span></div>
   <div class="street streetB" id="streetB" role="group" aria-label="Teams and communities. Choose a building to read about it.">
     <svg class="skyline" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="500" x2="1200" y2="500" class="gl"/></svg>
-    <div class="bld-row six" id="bldRowB"></div>
+    <div class="bld-row four" id="bldRowB"></div>
   </div>
   <div class="bcard" id="bcardB" aria-live="polite"></div>
 </section>
@@ -746,7 +762,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 
 <!-- A-500 RESEARCH -->
 <section class="sheet" id="a500" data-no="A-500" data-nm="Research">
-  <div class="sheet-head"><h2>Research</h2><span class="mono">A-500<br>14 papers and a book chapter</span></div>
+  <div class="sheet-head"><h2>Research</h2><span class="mono">A-500<br>15 publications, including Energy &amp; Buildings</span></div>
   <div class="rstats">
     <div><b data-count="15" data-suffix="+">15+</b>publications</div>
     <div><b data-count="9800" data-suffix="+">9,800+</b>reads on ResearchGate</div>
@@ -754,8 +770,15 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
     <div><b data-count="3">3</b>conferences</div>
     <div><b data-count="50" data-suffix="+">50+</b>students in the programme I led</div>
   </div>
+  <a class="featured-pub" href="https://www.sciencedirect.com/science/article/pii/S0378778825016391" target="_blank" rel="noopener">
+    <span class="mono">Featured · Elsevier · Energy &amp; Buildings · Dec 2025</span>
+    <b>Green Buildings and Sustainable Development</b>
+    <p>A PRISMA systematic review: 330 records from Scopus, Web of Science and Google Scholar screened down to 39 studies on green building components, their cost-benefit against conventional buildings, and their environmental impact.</p>
+    <span class="mono go">Read on ScienceDirect</span>
+  </a>
   <div class="pubgroups">
     <div><h3 class="mono">Architecture &amp; the built environment</h3><ol class="pubs">
+      <li><span class="mono">2025</span><div><b>Green Buildings and Sustainable Development</b><p>Elsevier, Energy &amp; Buildings. Systematic literature review.</p></div></li>
       <li><span class="mono">2025</span><div><b>Occupancy Pattern Detection and Energy–IAQ Analysis in Office Spaces</b><p>Warke, H., Verma, P., Sameera, S. Data-driven study of occupancy, indoor air quality and energy use.</p></div></li>
       <li><span class="mono">2025</span><div><b>A Critical Architectural and Historical Appraisal of Our Lady of Angels Church, Pondicherry</b><p>Warke, H. French colonial ecclesiastical architecture in India.</p></div></li>
       <li><span class="mono">2025</span><div><b>Italian Architecture, Green Initiatives and Well Being of Human Beings</b><p>Warke, H., Mishra, T. Chapter 24, Sustainable Development Goal Series.</p></div></li>
@@ -877,12 +900,12 @@ addEventListener('keydown',e=>{if(e.key==='Escape'&&dr.classList.contains('open'
 
 /* ---------- projects data ---------- */
 const P={
- limechat:{tag:['Jan 2026 to now','Bengaluru · on-site'],t:'AI Product Manager Intern, LimeChat',d:'I own Voice AI delivery end to end: discovery, demos, stakeholder alignment, go-live and optimisation. I also built the AI-led automation for agent creation, prompting, analytics and reporting that speeds every launch.',m:[['100+','Voice AI agents, 6+ industries'],['1L+','calls supported'],['30k','calls in 24 hours']],x:'First intern ever to earn Employee of the Month.'},
+ limechat:{tag:['Jan 2026 to now','Bengaluru · on-site'],t:'AI Product Manager Intern, LimeChat',d:'I own enterprise and mid-market Voice AI end to end: discovery, conversation design, prompting, go-lives, analytics and QA. I built Claude-powered tools for voice analytics, reporting and system-prompt generation.',m:[['40+','multilingual Voice AI initiatives'],['20+','live accounts'],['19k+','calls analysed daily']],x:'First intern ever to win Employee of the Month; 2nd in an internal hackathon; 30,000-call campaign shipped in 24 hours.'},
  cura:{tag:['Oct 2024 to now','Entrepreneurship'],t:'Founder & CEO, Cura HealthTech',d:'Leading a three-person founding team with a CTO and COO to build a B2B2C HealthTech SaaS platform: one prototype that brings pharmacy, scheduling and records together for hospitals and patients. Recognised by Elevation, Nexus and other VCs.',m:[['2K+','pilot user sessions'],['200+','user surveys; 30+ doctor interviews'],['5','cities in phased GTM']],x:'3 end-to-end prototypes: admin, doctor and patient portals.',a:['https://cura-core-frontend.vercel.app','Open prototype']},
  frost:{tag:['May to Jul 2025','Chennai · on-site'],t:'Growth Advisory Intern, Frost & Sullivan',d:'Reported to the Principal Consultant on GTM strategy for a Fortune 500 HealthTech client, analysing API manufacturers across key global markets.',m:[['12','country GTM roadmaps'],['40%','less duplication via modular templates'],['250+','manufacturers benchmarked for 85 APIs']],x:'Built from 10,000+ data points across 150+ sources.'},
  cdc:{tag:['Jun 2026 to now','IIT Kharagpur'],t:'Student Placement Coordinator, CDC',d:'Selected by professors and deans to drive recruitment and career initiatives for 5,500+ students, as part of the 22-member Placement Committee linking the CDC, students and corporate stakeholders.',m:[['120+','recruiters onboarded'],['350+','executives engaged'],['25+','dormant recruiters revived']],x:'30+ new firms brought into dialogue.'},
  maruti:{tag:['May to Jul 2024','Maharashtra · on-site'],t:'Business Analyst Intern, Maruti Suzuki CEO’s Office',d:'Fixed operational gaps across 5 service centres in North Maharashtra with an in-house BI dashboard that tracks technician KPIs, from service time and utilisation to fix rate and rework.',m:[['35+ hrs','manual work saved monthly'],['20 min','cut from service time'],['+5%','first-time fix rate']],x:'Utilisation up from 3 to 3.5 repairs a day, across 7 new KPIs.'},
- spats:{tag:['Feb 2023 to May 2025','ISRO & IIT Kharagpur'],t:'Executive Head, spAts & NSSC’24',d:'Led sponsorship, marketing and guest lectures for the National Students Space Challenge 2024 and research at the Kalpana Chawla Space Technology Cell.',m:[['37+','sponsors, 300% YoY funding'],['12M+','followers reached by talk shows'],['11','papers from 50+ students']],x:'Launched the spAts Journal; project grants up 300%.',a:['https://spats.co.in/publication','Read papers']}
+ spats:{tag:['Feb 2023 to now','Space Technology Students’ Society & NSSC'],t:'spAts &amp; the National Students’ Space Challenge',d:'From junior executive to Advisor at spAts and Steering Committee member at NSSC. I led a 50-person research programme and, as the only single-point head, ran NSSC sponsorship, marketing and guest lectures.',m:[['37+','brand partners, +185%'],['3.5x','monetary contributions'],['15+','guest lectures']],x:'Talk-show reel reached 2.5M+ viewers.',a:['https://spats.co.in/publication','Read papers']}
 };
 const body=$('#panelBody');
 function render(k){const p=P[k];body.innerHTML=`<div class="tag"><span>${p.tag[0]}</span><span>${p.tag[1]}</span></div><h3>${p.t}</h3><p>${p.d}</p><dl>${p.m.map(x=>`<div><dt>${x[0]}</dt><dd>${x[1]}</dd></div>`).join('')}</dl>${p.x?`<p class="note" style="margin-top:16px">${p.x}</p>`:''}${p.a?`<a class="out" href="${p.a[0]}" target="_blank" rel="noopener">${p.a[1]}</a>`:''}`}
@@ -921,20 +944,19 @@ setFloor(0);
 const B=[
  {k:'cdc',n:5500,num:'5,500+',lab:'Placement Coordinator, CDC',tag:'Jun 2026 to now · Career Development Centre',t:'Student Placement Coordinator',d:'My current role. Selected by professors and deans to drive recruitment for 5,500+ students, as one of the 22-member Placement Committee linking the CDC, students and companies. I bring recruiters in, revive dormant relationships and opened dialogue with 30+ new firms.',m:[['120+','recruiters onboarded'],['350+','executives engaged'],['25+','dormant recruiters revived']]},
  {k:'ug',n:8000,num:'8,000+',lab:'Undergraduate Representative',tag:'Jun 2024 to May 2025 · IIT Kharagpur',t:'Undergraduate Representative',d:'Appointed by the HoD and a faculty panel to speak for every undergraduate. I drove welfare reforms through meetings with the deans, including dual-degree conversion relaxations and deregistration waivers.',m:[['8,000+','students represented'],['8+','welfare reforms'],['30+','meetings with deans']]},
- {k:'conv',n:5000,num:'5,000+',lab:'70th Convocation',tag:'2024–25 · as UG Representative',t:'70th Convocation',d:'Helped run IIT Kharagpur’s 70th Convocation for 5,000+ attendees as part of the student representation team.',m:[['5,000+','attendees'],['70th','convocation'],['1','day to get right']]},
- {k:'spats',n:50,num:'50+',lab:'Executive Head, spAts',tag:'Feb 2023 to May 2025 · ISRO & IIT KGP space cell',t:'Executive Head, spAts & NSSC’24',d:'Led sponsorship, marketing and research for the National Students Space Challenge: a 12-group research programme, two celebrity talk shows and the spAts Journal.',m:[['50+','student researchers'],['37+','sponsors; 300% YoY'],['12M+','followers reached']]},
- {k:'mentor',n:4,num:'4',lab:'Student Mentor',tag:'IIT Kharagpur',t:'Student Mentor',d:'Mentored four freshers through their first year. The smallest building on this street, and one of the most rewarding.',m:[['4','freshers mentored'],['1','year each'],['∞','chai']]}
+
+ {k:'spats',n:50,num:'50',lab:'Research lead, spAts',tag:'May 2024 to May 2025 · Space Technology Students’ Society',t:'Research lead, spAts',d:'Led a research programme for my junior batch: 50 members in 12 groups, producing review papers and book chapters in astrophysics, cosmology and astro-economics.',m:[['50','researchers'],['12','groups'],['11','papers published']]},
+ {k:'nssc',n:35,num:'35+',lab:'Head, NSSC Sponsorship',tag:'May 2024 to May 2025 · National Students’ Space Challenge',t:'Head of Sponsorship &amp; Marketing, NSSC',d:'The only person to run two portfolios alone: sponsorship and marketing, and guest lectures. I managed and mentored 35+ junior executives.',m:[['35+','juniors managed'],['37+','brand partners, +185%'],['15+','guest sessions']]},
+ {k:'mentor',n:4,num:'4',lab:'Student Mentor',tag:'IIT Kharagpur',t:'Student Mentor',d:'Mentored four freshers through their first year at IIT Kharagpur.',m:[['4','freshers mentored']]}
 ];
 const BB=[
- {k:'interiit',h:100,num:'Gold',lab:'Inter IIT Tech Meet 13.0',tag:'2025 · IIT Kharagpur contingent',t:'Inter IIT Tech Meet 13.0',d:'Part of the IIT Kharagpur contingent that won overall Gold by a record 1,300+ point margin, with Silver in ISRO’s high-prep problem statement.',m:[['Gold','overall'],['1,300+','point margin'],['23','IITs competing']]},
- {k:'hpair',h:84,num:'Delegate',lab:'HPAIR, Hong Kong',tag:'2023 · Harvard Project for Asian and International Relations',t:'HPAIR Conference, Hong Kong',d:'Selected as a delegate to Harvard’s HPAIR conference in Hong Kong, representing India.',m:[['1','of India’s delegates'],['HK','host city'],['2023','year']]},
- {k:'rphall',h:74,num:'Bronze',lab:'RP Hall, Tech GC',tag:'IIT Kharagpur · inter-hall',t:'Vice-Captain, RP Hall Tech GC',d:'Vice-Captain who led Rajendra Prasad Hall to Bronze in the inter-hall Technology General Championship.',m:[['Bronze','Tech GC'],['Vice','Captain'],['Hall','team sport']]},
- {k:'product',h:64,num:'Sr. Exec',lab:'Product Club',tag:'IIT Kharagpur',t:'Product Club',d:'Senior Executive Member of IIT Kharagpur’s Product Club, alongside four national podium finishes in PM case competitions.',m:[['Sr. Exec','member'],['4','PM case podiums'],['PM','community']]},
- {k:'blockchain',h:58,num:'Sr. Exec',lab:'Blockchain Society',tag:'IIT Kharagpur',t:'Blockchain Society',d:'Senior Executive Member of IIT Kharagpur’s Blockchain Society.',m:[['Sr. Exec','member'],['Web3','focus'],['KGP','campus']]},
- {k:'kshitij',h:50,num:'Volunteer',lab:'Kshitij’23',tag:'2023 · IIT Kharagpur',t:'Volunteer, Kshitij’23',d:'Volunteered at Kshitij, IIT Kharagpur’s techno-management fest.',m:[['2023','edition'],['Fest','team'],['On','the ground']]}
+ {k:'rec',n:120,num:'120+',lab:'Recruiters onboarded',tag:'Placement season · CDC',t:'120+ recruiters onboarded',d:'Brought eminent recruiters into IIT Kharagpur’s placement process across all recruitment verticals.',m:[['120+','recruiters']]},
+ {k:'exec',n:350,num:'350+',lab:'Executives engaged',tag:'Placement season · CDC',t:'350+ executives engaged',d:'Ran outreach with HR and business leaders to widen the set of roles open to students.',m:[['350+','executives']]},
+ {k:'rev',n:25,num:'25+',lab:'Dormant recruiters revived',tag:'Placement season · CDC',t:'25+ dormant recruiters revived',d:'Reconnected with companies that had stopped hiring from campus by addressing their past concerns.',m:[['25+','recruiters back']]},
+ {k:'new',n:30,num:'30+',lab:'New firms in dialogue',tag:'Placement season · CDC',t:'30+ new firms in dialogue',d:'Opened conversations with firms that had never recruited at IIT Kharagpur.',m:[['30+','new firms']]}
 ];
 function street(rowEl,cardEl,data,def,hf,nowKey){
-  rowEl.innerHTML=data.map(b=>{const h=hf(b);const now=b.k===nowKey;return `<button class="bld${now?' now':''}" data-k="${b.k}" style="--h:${h}%;--hn:${h}" aria-label="${b.lab}, ${b.num}${now?', current role':''}">${now?'<span class="flag">Now</span>':''}<span class="num">${b.num}</span><span class="door"></span><span class="lab">${b.lab}</span></button>`}).join('');
+  rowEl.innerHTML=data.map(b=>{const h=hf(b);const now=b.k===nowKey;return `<button class="bld${now?' now':''}${h<8?' tiny':''}" data-k="${b.k}" style="--h:${h}%;--hn:${h}" aria-label="${b.lab}, ${b.num}${now?', current role':''}">${now?'<span class="flag">Now</span>':''}<span class="num">${b.num}</span><span class="door"></span><span class="lab">${b.lab}</span></button>`}).join('');
   let cur=null,pin=def;const blds=[...rowEl.querySelectorAll('.bld')];
   function show(k){if(k===cur)return;cur=k;const b=data.find(x=>x.k===k);blds.forEach(x=>x.classList.toggle('on',x.dataset.k===k));
     const html=`<div><span class="tag">${b.tag}</span><h3>${b.t}</h3><p>${b.d}</p></div><dl>${b.m.map(x=>`<div><dt>${x[0]}</dt><dd>${x[1]}</dd></div>`).join('')}</dl>`;
@@ -943,8 +965,8 @@ function street(rowEl,cardEl,data,def,hf,nowKey){
   blds.forEach(x=>{x.addEventListener('pointerenter',()=>show(x.dataset.k));x.addEventListener('pointerleave',()=>show(pin));x.addEventListener('focus',()=>show(x.dataset.k));x.addEventListener('click',()=>{pin=x.dataset.k;show(pin)})});
   rowEl.addEventListener('focusout',e=>{if(!rowEl.contains(e.relatedTarget))show(pin)});
 }
-street($('#bldRow'),$('#bcard'),B,'cdc',b=>45+55*Math.log10(b.n)/Math.log10(8000),'cdc');
-street($('#bldRowB'),$('#bcardB'),BB,'interiit',b=>b.h,null);
+street($('#bldRow'),$('#bcard'),B,'cdc',b=>Math.max(.6,b.n/8000*100),'cdc');
+street($('#bldRowB'),$('#bcardB'),BB,'exec',b=>b.n/350*100,null);
 
 /* ---------- crosshair ---------- */
 if(fine){
