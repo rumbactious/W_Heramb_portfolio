@@ -9,13 +9,11 @@
 <link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:"Archivo";src:url(fonts/archivo.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
-@font-face{font-family:"Plex Mono";src:url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Plex Mono";src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
 :root{
   --paper:#ECEEEA; --sheet:#F7F8F5; --ink:#1B1E22; --grey:#6B7076; --hair:#C9CDC8;
   --blue:#7FA7D9; --red:#E2402F;
   --sans:"Archivo", "Helvetica Neue", Arial, sans-serif;
-  --mono:"Plex Mono", ui-monospace, Menlo, monospace;
+  --mono:"Archivo", "Helvetica Neue", Arial, sans-serif;
   --m:clamp(10px,1.4vw,22px);
   --ease:cubic-bezier(.65,0,.35,1);
 }
@@ -27,7 +25,7 @@ a{color:inherit}
 button{font:inherit;color:inherit}
 ::selection{background:var(--red);color:#fff}
 :focus-visible{outline:2px solid var(--red);outline-offset:3px}
-.mono{font-family:var(--mono);font-size:13px;letter-spacing:.02em}
+.mono{font-family:var(--mono);font-size:13px;font-weight:500;font-stretch:90%;letter-spacing:.01em}
 .red{color:var(--red)}
 
 /* drafting grid on the paper */
@@ -47,7 +45,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .xh,.yh{position:fixed;z-index:120;pointer-events:none;background:var(--blue);opacity:.55}
 .xh{left:0;right:0;height:1px;top:0}
 .yh{top:0;bottom:0;width:1px;left:0}
-.coord{position:fixed;z-index:121;pointer-events:none;font-family:var(--mono);font-size:11px;color:var(--ink);background:var(--sheet);border:1px solid var(--blue);padding:2px 6px;white-space:nowrap}
+.coord{position:fixed;z-index:121;pointer-events:none;font-family:var(--mono);font-size:12px;color:var(--ink);background:var(--sheet);border:1px solid var(--blue);padding:2px 6px;white-space:nowrap}
 .coord.hot{background:var(--red);color:#fff;border-color:var(--red)}
 @media (hover:none){.xh,.yh,.coord{display:none}}
 @media (hover:hover){body{cursor:crosshair} a,button,[role=button]{cursor:pointer}}
@@ -59,13 +57,13 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:repeating-linear-gradient(0deg,var(--grey) 0 1px,transparent 1px 12px) right/4px 100% no-repeat,repeating-linear-gradient(0deg,var(--grey) 0 1px,transparent 1px 120px) right/9px 100% no-repeat}
 
 /* ---------- fixed title block ---------- */
-.tb{position:fixed;right:calc(var(--m) + 10px);bottom:calc(var(--m) + 10px);z-index:100;display:grid;grid-template-columns:auto auto;transition:opacity .35s,transform .45s var(--ease);border:1.5px solid var(--ink);background:var(--sheet);font-family:var(--mono);font-size:11px}
+.tb{position:fixed;right:calc(var(--m) + 10px);bottom:calc(var(--m) + 10px);z-index:100;display:grid;grid-template-columns:auto auto;transition:opacity .35s,transform .45s var(--ease);border:1.5px solid var(--ink);background:var(--sheet);font-family:var(--mono);font-size:12px}
 .tb > div{padding:6px 10px;border-right:1px solid var(--ink)}
 .tb > div:last-child{border-right:0}
 .tb .no{font-family:var(--sans);font-size:30px;font-weight:700;font-stretch:75%;line-height:1;overflow:hidden;height:30px}
 .tb .no span,.tb .nm span{display:block}
 .tb .nm{overflow:hidden;height:16px;font-size:12px;font-weight:500}
-.tb small{display:block;color:var(--grey);font-size:11px}
+.tb small{display:block;color:var(--grey);font-size:12px}
 .tb .meta{display:flex;flex-direction:column;justify-content:space-between;min-width:160px}
 
 /* ---------- index nav ---------- */
@@ -118,7 +116,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .cover .bottom{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--ink)}
 .cover .bottom div{padding:12px 14px;border-right:1px solid var(--hair)}
 .cover .bottom div:last-child{border-right:0}
-.cover .bottom small{display:block;font-family:var(--mono);font-size:11px;color:var(--grey)}
+.cover .bottom small{display:block;font-family:var(--mono);font-size:12px;color:var(--grey)}
 .cover .bottom b{font-weight:600;font-size:16px}
 @media (max-width:860px){
   .cover{grid-template-columns:1fr}
@@ -229,12 +227,12 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .bubble img{width:100%;height:100%;object-fit:cover;transform:scale(1.15);transition:transform 1.2s var(--ease)}
 .detail:hover .bubble img{transform:scale(1.4)}
 .detail .num{position:absolute;top:0;left:0;width:56px;height:56px;border-radius:50%;background:var(--sheet);border:1.5px solid var(--ink);display:grid;place-items:center;font-weight:700;font-stretch:75%;font-size:22px;line-height:1}
-.detail .num span{display:block;border-top:1.5px solid var(--ink);width:70%;text-align:center;font-family:var(--mono);font-size:10px;font-weight:400;padding-top:1px}
+.detail .num span{display:block;border-top:1.5px solid var(--ink);width:70%;text-align:center;font-family:var(--mono);font-size:12px;font-weight:400;padding-top:1px}
 .detail h3{margin-top:22px;font-size:30px;font-weight:700;font-stretch:80%;line-height:1}
 .detail p{color:var(--grey);font-size:16px;margin-top:6px}
 .notes{margin-top:clamp(60px,7vw,100px);display:grid;grid-template-columns:repeat(5,1fr);border-top:1.5px solid var(--ink)}
 .notes li{list-style:none;padding:14px 14px 0 0;font-weight:600;font-size:20px;font-stretch:85%}
-.notes li span{display:block;font-family:var(--mono);font-size:11px;color:var(--grey);font-weight:400}
+.notes li span{display:block;font-family:var(--mono);font-size:12px;color:var(--grey);font-weight:400}
 .notes a{text-decoration:none;border-bottom:1.5px solid var(--red)}
 @media (max-width:860px){.details{grid-template-columns:1fr 1fr}.notes{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.details{grid-template-columns:1fr}}
@@ -427,7 +425,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .bcard dl div{padding:12px 10px 0 0}
 .bcard dt{font-weight:800;font-stretch:72%;font-size:clamp(28px,2.6vw,42px);line-height:1;color:var(--red)}
 .bcard dd{font-size:13px;color:var(--grey);line-height:1.3;margin-top:4px}
-@media (max-width:860px){.bld .lab{font-size:10px}.bcard{grid-template-columns:1fr}.street{height:360px}}
+@media (max-width:860px){.bld .lab{font-size:12px}.bcard{grid-template-columns:1fr}.street{height:360px}}
 
 .pubgroups{display:grid;grid-template-columns:1fr;gap:clamp(36px,4vw,56px);margin-top:clamp(40px,5vw,64px)}
 .pubgroups > div:first-child .pubs{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(24px,3vw,48px)}
@@ -440,7 +438,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .pubs.compact b{font-size:clamp(16px,1.3vw,19px);font-weight:600}
 @media (max-width:860px){.pubgroups > div:first-child .pubs,.pubs.compact{grid-template-columns:1fr}}
 @media (max-width:620px){.bld .num{font-size:17px}.bld .lab{display:none}.scale{margin-top:18px}.bld-row{gap:8px}}
-.bld .flag{position:absolute;left:50%;bottom:calc(100% + clamp(44px,5vw,74px));transform:translateX(-50%);background:var(--red);color:#fff;font-family:var(--mono);font-size:11px;padding:3px 8px;white-space:nowrap}
+.bld .flag{position:absolute;left:50%;bottom:calc(100% + clamp(44px,5vw,74px));transform:translateX(-50%);background:var(--red);color:#fff;font-family:var(--mono);font-size:12px;padding:3px 8px;white-space:nowrap}
 .bld .flag::after{content:"";position:absolute;left:50%;top:100%;width:1.5px;height:14px;background:var(--red)}
 .bld.now{border-width:2px}
 
@@ -473,7 +471,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .streetB .bld.on::before{background:repeating-linear-gradient(90deg,transparent 0 14px,rgba(226,64,47,.5) 14px 15.5px)}
 .streetB .bld .num{font-size:clamp(20px,2.2vw,36px)}
 .streetB + .bcard{margin-top:60px}
-@media (max-width:620px){.bld-row.six{grid-template-columns:repeat(3,1fr);row-gap:60px}.streetB{height:auto;min-height:520px}.streetB .bld{height:calc(var(--hn) * 1.5px)}.streetB .bld-row{position:relative;bottom:auto;padding-top:60px}.streetB .skyline{display:none}.streetB .bld .lab{display:block;font-size:10px;top:calc(100% + 6px)}.streetB + .bcard{margin-top:30px}}
+@media (max-width:620px){.bld-row.six{grid-template-columns:repeat(3,1fr);row-gap:60px}.streetB{height:auto;min-height:520px}.streetB .bld{height:calc(var(--hn) * 1.5px)}.streetB .bld-row{position:relative;bottom:auto;padding-top:60px}.streetB .skyline{display:none}.streetB .bld .lab{display:block;font-size:12px;top:calc(100% + 6px)}.streetB + .bcard{margin-top:30px}}
 
 .bld-row.four{grid-template-columns:repeat(4,1fr)}
 .bld[style*="--h:0.6%"],.bld[style*="--h:0.4375%"]{min-height:3px}
@@ -488,6 +486,37 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .bld.tiny{border-width:1.5px}
 @media (max-width:860px){.brief{grid-template-columns:1fr;align-items:start}.site{max-width:260px}}
 @media (max-width:520px){.details{grid-template-columns:1fr;gap:22px}.detail{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}.detail .num{width:36px;height:36px;font-size:15px}.detail .num span{display:none}.detail h3{margin-top:0;font-size:24px}.detail .bubble{grid-row:1/3}.detail h3{grid-column:2;align-self:end}.detail p{grid-column:2;align-self:start;margin-top:4px;font-size:14.5px}}
+
+/* ===== v9: facade ===== */
+.facade{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1.2vw,16px)}
+.bay{position:relative;border:1.5px solid var(--ink);padding:clamp(18px,2vw,28px);padding-top:clamp(22px,2.4vw,32px);background:var(--sheet);display:flex;flex-direction:column;gap:10px;overflow:hidden;transition:transform .15s ease-out,border-color .15s ease-out;grid-column:span 2}
+.bay::before{content:"";position:absolute;left:-1.5px;right:-1.5px;top:-1.5px;height:7px;background:var(--ink);transition:background .15s ease-out}
+.bay::after{content:"";position:absolute;right:0;bottom:0;width:42%;height:55%;background:repeating-linear-gradient(0deg,transparent 0 22px,rgba(127,167,217,.28) 22px 23px),repeating-linear-gradient(90deg,transparent 0 18px,rgba(127,167,217,.28) 18px 19px);-webkit-mask-image:linear-gradient(135deg,transparent 30%,#000);mask-image:linear-gradient(135deg,transparent 30%,#000);pointer-events:none}
+.bay > *{position:relative;z-index:1}
+.bay:hover{transform:translateY(-4px);border-color:var(--red)}
+.bay:hover::before{background:var(--red)}
+.bay-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--grey)}
+.bay h3{font-size:clamp(22px,2vw,30px);font-weight:700;font-stretch:78%;line-height:1.1}
+.bay-big{display:flex;flex-direction:column;gap:4px;margin-top:auto}
+.bay-big b{font-weight:900;font-stretch:64%;font-size:clamp(48px,5vw,84px);line-height:.9;font-variant-numeric:tabular-nums}
+.bay-big span{font-size:15px;color:#33373C;line-height:1.4;max-width:34ch}
+.bay p{font-size:15px;color:#33373C;line-height:1.5}
+.bay-lede{font-size:clamp(16px,1.3vw,19px)!important;max-width:46ch}
+.pill{background:var(--red);color:#fff;font-family:var(--mono);font-size:12px;font-weight:500;padding:3px 9px}
+.bay-cdc{grid-column:1 / span 4;grid-row:span 2}
+.bay-cdc h3{font-size:clamp(34px,3.6vw,60px);font-weight:800;font-stretch:70%;line-height:1}
+.bay-cdc .bay-big b{font-size:clamp(84px,10vw,170px);color:var(--red)}
+.bay-cdc::before{background:var(--red)}
+.bay-cdc::after{width:55%;height:70%}
+.bay-metrics{display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--ink);margin-top:14px}
+.bay-metrics div{padding:12px 12px 0 0}
+.bay-metrics dt{font-weight:900;font-stretch:66%;font-size:clamp(30px,3vw,48px);line-height:1;font-variant-numeric:tabular-nums}
+.bay-metrics dd{font-size:14px;color:var(--grey);line-height:1.35;margin-top:4px}
+.bay-bar .bay-big b{font-size:clamp(40px,4vw,64px)}
+.sched tr.w0 td:first-child{box-shadow:inset 3px 0 0 var(--red)}
+.sched tr.w0 td b{color:var(--ink)}
+@media (max-width:960px){.facade{grid-template-columns:1fr 1fr}.bay,.bay-cdc{grid-column:span 1;grid-row:auto}.bay-cdc{grid-column:1 / -1}}
+@media (max-width:560px){.facade{grid-template-columns:1fr}.bay-metrics{grid-template-columns:1fr 1fr}.bay-metrics div:nth-child(n+3){border-top:1px solid var(--hair)}}
 /* JS-only hidden starts */
 .js .name .ln > span{transform:translateY(105%)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}#plot{display:none}}
@@ -543,13 +572,13 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
     <div class="frame"><img src="img/suit.webp" alt="Heramb in a maroon suit, arms crossed, smiling"></div>
     <i class="crop c1"></i><i class="crop c2"></i><i class="crop c3"></i><i class="crop c4"></i>
     
-    <figcaption class="mono">Fig. 1. The client. Hover for colour.</figcaption>
+    <figcaption class="mono">Fig. 1. W. Heramb, IIT Kharagpur</figcaption>
   </figure>
   <div class="bottom">
     <div><small>Now</small><b>AI Product Manager Intern, LimeChat</b></div>
     <div><small>Venture</small><b>Founder &amp; CEO, Cura HealthTech</b></div>
     <div><small>Represented</small><b>Undergraduate Representative, 8,000+ students</b></div>
-    <div><small>Micro-specialisations</small><b>AI &amp; Applications; Entrepreneurship &amp; Innovation</b></div>
+    <div><small>Recognition</small><b>Best All-Rounder Student Award, 2025</b></div>
   </div>
 </section>
 
@@ -570,7 +599,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   <div class="verbs" id="verbs">
     <article class="verb" data-k="ships"><h3 class="vw" aria-label="Ships"><span>Ships</span></h3><div class="vproof"><b class="vnum" data-count="100" data-suffix="+">100+</b><p>Voice AI agents live at LimeChat across 6+ industries. I own delivery end to end, and was the first intern ever to win Employee of the Month.</p></div></article>
     <article class="verb" data-k="builds"><h3 class="vw" aria-label="Builds"><span>Builds</span></h3><div class="vproof"><b class="vnum" data-count="2000" data-suffix="+">2,000+</b><p>Pilot sessions for Cura HealthTech, which I founded with a CTO and COO. Three working prototypes, 200+ user surveys, 30+ doctor interviews.</p></div></article>
-    <article class="verb" data-k="leads"><h3 class="vw" aria-label="Leads"><span>Leads</span></h3><div class="vproof"><b class="vnum" data-count="8000" data-suffix="+">8,000+</b><p>Students represented as Undergraduate Representative. Now Placement Coordinator for 5,500+, and before that lead of a 50-student research programme.</p></div></article>
+    <article class="verb" data-k="leads"><h3 class="vw" aria-label="Leads"><span>Leads</span></h3><div class="vproof"><b class="vnum" data-count="8000" data-suffix="+">8,000+</b><p>Students represented as Undergraduate Representative. Now Placement Coordinator for 5,500+, and the 2025 Best All-Rounder, chosen from 2,000+.</p></div></article>
     <article class="verb" data-k="thinks"><h3 class="vw" aria-label="Thinks"><span>Thinks</span></h3><div class="vproof"><b class="vnum" data-count="15" data-suffix="+">15+</b><p>Publications, read 9,800+ times. Including a paper in Elsevier’s Energy &amp; Buildings. GTM roadmaps for 12 countries at Frost &amp; Sullivan, and BI from Maruti Suzuki’s CEO’s Office.</p></div></article>
   </div>
   <div class="dims">
@@ -655,7 +684,6 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
         <text x="490" y="770" text-anchor="middle" class="entry">ENTRY</text>
       </svg>
       <div class="chips" role="group" aria-label="Rooms"></div>
-      <p class="mono hint" style="color:var(--grey)">The plan tours itself. Hover, tap or tab to a room to take over; Enter pins it.</p>
     </div>
     <div class="panel" aria-live="polite"><div class="body" id="panelBody"></div></div>
   </div>
@@ -663,7 +691,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 
 <!-- A-300 SECTION -->
 <section class="sheet section-sheet" id="a300" data-no="A-300" data-nm="Section through time">
-  <div class="sheet-head"><h2>Section through time</h2><span class="mono">A-300<br>A building still under construction. Scroll to go up.</span></div>
+  <div class="sheet-head"><h2>Section through time</h2><span class="mono">A-300<br>A building still under construction</span></div>
   <div class="sec" id="sec">
     <div class="bldgwrap">
       <svg class="bldg" id="bldg" viewBox="0 0 420 760" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
@@ -703,7 +731,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
         <li><b>Work</b>Growth Advisory Intern, Frost &amp; Sullivan</li>
         <li><b>Win</b>Contingent Gold, Inter IIT Tech Meet 13.0, by a record 1,300+ points</li>
         <li><b>Research</b>Paper in Elsevier’s Energy &amp; Buildings, plus a book chapter and two more papers</li>
-        <li><b>Win</b>Best All-Rounder Student Award</li></ul></article>
+        <li><b>Win</b>Best All-Rounder Student Award, chosen from 2,000+</li></ul></article>
       <article data-l="5" data-y="2026"><div class="yr">2026<small>Level 5</small></div><h3>Voice AI, at scale</h3><ul>
         <li><b>Work</b>AI Product Manager Intern, LimeChat; Employee of the Month</li>
         <li><b>Lead</b>Student Placement Coordinator, Career Development Centre</li>
@@ -719,30 +747,57 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 
 <!-- A-400 ELEVATION -->
 <section class="sheet" id="a400" data-no="A-400" data-nm="Elevation of trust">
-  <div class="sheet-head"><h2>Elevation of trust</h2><span class="mono">A-400<br>Elevation A: groups that chose me to lead.<br>Both elevations drawn to scale.</span></div>
-  <h3 class="elev-a-head">Elevation A. People I’ve represented or led, drawn to scale</h3>
-  <div class="street" id="street" role="group" aria-label="Leadership roles. Choose a building to read about it.">
-    <svg class="skyline" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="500" x2="1200" y2="500" class="gl"/></svg>
-    <div class="bld-row" id="bldRow"></div>
+  <div class="sheet-head"><h2>Elevation of trust</h2><span class="mono">A-400<br>Every bay is a group that chose me</span></div>
+  <div class="facade">
+    <article class="bay bay-cdc">
+      <div class="bay-top"><span class="pill">Now</span><span class="mono">Jun 2026 – now · Career Development Centre</span></div>
+      <h3>Student Placement Coordinator</h3>
+      <p class="bay-lede">Selected by professors and deans to run recruitment for the whole institute. I bring new companies in, win back the ones that stopped coming, and keep thousands of students informed through the season.</p>
+      <div class="bay-big"><b data-count="5500" data-suffix="+">5,500+</b><span>students I bring recruiters to, as one of the 22-member Placement Committee</span></div>
+      <dl class="bay-metrics">
+        <div><dt data-count="120" data-suffix="+">120+</dt><dd>recruiters onboarded</dd></div>
+        <div><dt data-count="350" data-suffix="+">350+</dt><dd>executives engaged</dd></div>
+        <div><dt data-count="25" data-suffix="+">25+</dt><dd>dormant recruiters revived</dd></div>
+        <div><dt data-count="30" data-suffix="+">30+</dt><dd>new firms in dialogue</dd></div>
+      </dl>
+    </article>
+    <article class="bay bay-ug">
+      <div class="bay-top"><span class="mono">Aug 2024 – May 2025 · IIT Kharagpur</span></div>
+      <h3>Undergraduate Representative</h3>
+      <div class="bay-big"><b data-count="8000" data-suffix="+">8,000+</b><span>undergraduates represented</span></div>
+      <p>Appointed by the HoD and a faculty panel. 8+ welfare reforms through 30+ meetings with the deans.</p>
+    </article>
+    <article class="bay bay-bar">
+      <div class="bay-top"><span class="mono">2025 · IIT Kharagpur</span></div>
+      <h3>Best All-Rounder Student Award</h3>
+      <div class="bay-big"><b>1 of 2,000+</b><span>chosen from my batch for academic and extracurricular excellence</span></div>
+    </article>
+    <article class="bay">
+      <div class="bay-top"><span class="mono">2024–25 · spAts</span></div>
+      <h3>Research lead</h3>
+      <div class="bay-big"><b data-count="50">50</b><span>researchers in 12 groups; 11 papers published</span></div>
+    </article>
+    <article class="bay">
+      <div class="bay-top"><span class="mono">2024–25 · NSSC</span></div>
+      <h3>Head of Sponsorship &amp; Marketing</h3>
+      <div class="bay-big"><b data-count="35" data-suffix="+">35+</b><span>junior executives led; 37+ brand partners, up 185%</span></div>
+    </article>
+    <article class="bay">
+      <div class="bay-top"><span class="mono">IIT Kharagpur</span></div>
+      <h3>Student Mentor</h3>
+      <div class="bay-big"><b data-count="4">4</b><span>freshers guided through their first year</span></div>
+    </article>
   </div>
-  <div class="scale mono" aria-hidden="true">Everything is drawn to scale, so the small ones really are small. Hover or tap any building for details.</div>
-  <div class="bcard" id="bcard" aria-live="polite"></div>
-  <div class="elev-b-head"><h3>Elevation B. My current role, Placement Coordinator: one season at the CDC</h3><span class="mono">Drawn to scale</span></div>
-  <div class="street streetB" id="streetB" role="group" aria-label="Teams and communities. Choose a building to read about it.">
-    <svg class="skyline" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="500" x2="1200" y2="500" class="gl"/></svg>
-    <div class="bld-row four" id="bldRowB"></div>
-  </div>
-  <div class="bcard" id="bcardB" aria-live="polite"></div>
 </section>
 
 <!-- A-450 SCHEDULE -->
 <section class="sheet" id="a450" data-no="A-450" data-nm="Awards schedule">
-  <div class="sheet-head"><h2>Awards schedule</h2><span class="mono">A-450<br>Like a door schedule, but for wins</span></div>
+  <div class="sheet-head"><h2>Awards schedule</h2><span class="mono">A-450<br>Wins and recognition</span></div>
   <div class="schedwrap">
   <table class="sched">
     <thead><tr><th>Mark</th><th>Award</th><th>Field</th><th>Year</th></tr></thead>
     <tbody>
-      <tr><td><i>W0</i></td><td><b>Best All-Rounder Student Award, IIT Kharagpur</b><span>Chosen from a batch of 2,000+ for academic and extracurricular excellence</span></td><td>1 of 2,000+</td><td>2025</td></tr>
+      <tr class="w0"><td><i>W0</i></td><td><b>Best All-Rounder Student Award, IIT Kharagpur</b><span>Chosen from a batch of 2,000+ for academic and extracurricular excellence</span></td><td>1 of 2,000+</td><td>2025</td></tr>
       <tr><td><i>W1</i></td><td><b>Contingent Gold, Inter IIT Tech Meet 13.0</b><span>Record 1,300+ point margin; Silver in ISRO’s high-prep problem statement among 23 IITs</span></td><td>23 IITs</td><td>2025</td></tr>
       <tr><td><i>W2</i></td><td><b>Employee of the Month, LimeChat</b><span>First intern ever to receive it</span></td><td>Company</td><td>2026</td></tr>
       <tr><td><i>W3</i></td><td><b>Runners-up, Stratagem national finals</b><span>Masters’ Union consulting case on a real rice brand</span></td><td>National</td><td>2024</td></tr>
@@ -936,33 +991,6 @@ function setFloor(i){arts.forEach(a=>a.classList.toggle('on',+a.dataset.l===i));
   fls.forEach(g=>{const l=+g.dataset.l;g.classList.toggle('fl-built',l<i);g.classList.toggle('fl-now',l===i);g.classList.toggle('fl-plan',l>i)})}
 setFloor(0);
 
-/* elevation of trust */
-const B=[
- {k:'cdc',n:5500,num:'5,500+',lab:'Placement Coordinator, CDC',tag:'Jun 2026 to now · Career Development Centre',t:'Student Placement Coordinator',d:'My current role. Selected by professors and deans to drive recruitment for 5,500+ students, as one of the 22-member Placement Committee linking the CDC, students and companies. I bring recruiters in, revive dormant relationships and opened dialogue with 30+ new firms.',m:[['120+','recruiters onboarded'],['350+','executives engaged'],['25+','dormant recruiters revived']]},
- {k:'ug',n:8000,num:'8,000+',lab:'Undergraduate Representative',tag:'Jun 2024 to May 2025 · IIT Kharagpur',t:'Undergraduate Representative',d:'Appointed by the HoD and a faculty panel to speak for every undergraduate. I drove welfare reforms through meetings with the deans, including dual-degree conversion relaxations and deregistration waivers.',m:[['8,000+','students represented'],['8+','welfare reforms'],['30+','meetings with deans']]},
-
- {k:'spats',n:50,num:'50',lab:'Research lead, spAts',tag:'May 2024 to May 2025 · Space Technology Students’ Society',t:'Research lead, spAts',d:'Led a research programme for my junior batch: 50 members in 12 groups, producing review papers and book chapters in astrophysics, cosmology and astro-economics.',m:[['50','researchers'],['12','groups'],['11','papers published']]},
- {k:'nssc',n:35,num:'35+',lab:'Head, NSSC Sponsorship',tag:'May 2024 to May 2025 · National Students’ Space Challenge',t:'Head of Sponsorship &amp; Marketing, NSSC',d:'The only person to run two portfolios alone: sponsorship and marketing, and guest lectures. I managed and mentored 35+ junior executives.',m:[['35+','juniors managed'],['37+','brand partners, +185%'],['15+','guest sessions']]},
- {k:'mentor',n:4,num:'4',lab:'Student Mentor',tag:'IIT Kharagpur',t:'Student Mentor',d:'Mentored four freshers through their first year at IIT Kharagpur.',m:[['4','freshers mentored']]}
-];
-const BB=[
- {k:'rec',n:120,num:'120+',lab:'Recruiters onboarded',tag:'Placement season · CDC',t:'120+ recruiters onboarded',d:'Brought eminent recruiters into IIT Kharagpur’s placement process across all recruitment verticals.',m:[['120+','recruiters']]},
- {k:'exec',n:350,num:'350+',lab:'Executives engaged',tag:'Placement season · CDC',t:'350+ executives engaged',d:'Ran outreach with HR and business leaders to widen the set of roles open to students.',m:[['350+','executives']]},
- {k:'rev',n:25,num:'25+',lab:'Dormant recruiters revived',tag:'Placement season · CDC',t:'25+ dormant recruiters revived',d:'Reconnected with companies that had stopped hiring from campus by addressing their past concerns.',m:[['25+','recruiters back']]},
- {k:'new',n:30,num:'30+',lab:'New firms in dialogue',tag:'Placement season · CDC',t:'30+ new firms in dialogue',d:'Opened conversations with firms that had never recruited at IIT Kharagpur.',m:[['30+','new firms']]}
-];
-function street(rowEl,cardEl,data,def,hf,nowKey){
-  rowEl.innerHTML=data.map(b=>{const h=hf(b);const now=b.k===nowKey;return `<button class="bld${now?' now':''}${h<8?' tiny':''}" data-k="${b.k}" style="--h:${h}%;--hn:${h}" aria-label="${b.lab}, ${b.num}${now?', current role':''}">${now?'<span class="flag">Now</span>':''}<span class="num">${b.num}</span><span class="door"></span><span class="lab">${b.lab}</span></button>`}).join('');
-  let cur=null,pin=def;const blds=[...rowEl.querySelectorAll('.bld')];
-  function show(k){if(k===cur)return;cur=k;const b=data.find(x=>x.k===k);blds.forEach(x=>x.classList.toggle('on',x.dataset.k===k));
-    const html=`<div><span class="tag">${b.tag}</span><h3>${b.t}</h3><p>${b.d}</p></div><dl>${b.m.map(x=>`<div><dt>${x[0]}</dt><dd>${x[1]}</dd></div>`).join('')}</dl>`;
-    if(window.gsap&&!reduce){gsap.timeline().to(cardEl,{opacity:0,y:6,duration:.15,ease:'power2.in'}).add(()=>cardEl.innerHTML=html).to(cardEl,{opacity:1,y:0,duration:.3,ease:'power3.out'})}else cardEl.innerHTML=html}
-  show(def);
-  blds.forEach(x=>{x.addEventListener('pointerenter',()=>show(x.dataset.k));x.addEventListener('pointerleave',()=>show(pin));x.addEventListener('focus',()=>show(x.dataset.k));x.addEventListener('click',()=>{pin=x.dataset.k;show(pin)})});
-  rowEl.addEventListener('focusout',e=>{if(!rowEl.contains(e.relatedTarget))show(pin)});
-}
-street($('#bldRow'),$('#bcard'),B,'cdc',b=>Math.max(.6,b.n/8000*100),'cdc');
-street($('#bldRowB'),$('#bcardB'),BB,'exec',b=>b.n/350*100,null);
 
 /* ---------- crosshair ---------- */
 if(fine){
@@ -1082,11 +1110,10 @@ mm.add('(min-width:861px)',()=>{
 });
 
 /* elevation towers rise */
-['#street','#streetB'].forEach(st=>{gsap.from(st+' .bld',{scaleY:0,duration:1.4,stagger:.1,ease:'expo.out',scrollTrigger:{trigger:st,start:'top 75%'}});gsap.from(st+' .bld .num,'+st+' .bld .lab,'+st+' .bld .flag',{opacity:0,y:8,stagger:.04,duration:.3,ease:'power3.out',delay:.8,scrollTrigger:{trigger:st,start:'top 75%'}})});
-gsap.from('#bcard',{y:40,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:'#bcard',start:'top 90%'}});
 $$('[data-count]').forEach(el=>{if(el.closest('.dimline'))return;const end=+el.dataset.count,suf=el.dataset.suffix||'',o={v:0};
   gsap.to(o,{v:end,duration:2,ease:'expo.out',scrollTrigger:{trigger:el.closest('section'),start:'top 40%'},onUpdate:()=>el.textContent=fmt(Math.round(o.v))+suf})});
 
+gsap.from('.bay',{y:8,opacity:0,stagger:.08,duration:.3,ease:'power3.out',scrollTrigger:{trigger:'.facade',start:'top 80%'}});
 /* details */
 $$('.detail').forEach((d,i)=>{gsap.from($('.bubble',d),{clipPath:'circle(0% at 50% 50%)',duration:1.4,ease:'expo.inOut',delay:i*.12,scrollTrigger:{trigger:'.details',start:'top 75%'}});
   gsap.from($('.num',d),{scale:0,duration:.7,ease:'back.out(2.5)',delay:.6+i*.12,scrollTrigger:{trigger:'.details',start:'top 75%'}});
