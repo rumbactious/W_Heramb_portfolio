@@ -533,6 +533,15 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .intro-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .intro-cta p{font-size:clamp(18px,1.5vw,22px);font-weight:600;font-stretch:88%}
 @media (max-width:860px){.intro{grid-template-columns:1fr}.intro-photo{max-width:240px}.intro-photo img{min-height:0;aspect-ratio:4/5;height:auto}.method{grid-template-columns:1fr}.method li{padding:14px 0 14px 22px;border-left:1.5px solid var(--hair)}.method li::before{left:-5.5px;top:18px}.method::before{display:none}}
+.method small{display:block;margin-top:10px;padding-top:8px;border-top:1px dashed var(--hair);font-size:13px;color:#33373C;line-height:1.45;max-width:30ch}
+.facts{display:grid;grid-template-columns:repeat(6,1fr);margin-top:clamp(28px,3vw,44px);border-top:1.5px solid var(--ink);border-bottom:1px solid var(--hair)}
+.facts div{padding:14px 14px 16px 0;border-right:1px solid var(--hair)}
+.facts div+div{padding-left:14px}
+.facts div:last-child{border-right:0}
+.facts dt{font-family:var(--mono);font-size:12px;color:var(--red);font-weight:500}
+.facts dd{font-size:15px;line-height:1.4;margin-top:4px;color:var(--ink)}
+@media (max-width:1100px){.facts{grid-template-columns:repeat(3,1fr)}.facts div:nth-child(3){border-right:0}.facts div:nth-child(4){padding-left:0}.facts div:nth-child(-n+3){border-bottom:1px solid var(--hair)}}
+@media (max-width:560px){.facts{grid-template-columns:1fr 1fr}.facts div{padding-left:0!important;border-right:0}.facts div:nth-child(odd){border-right:1px solid var(--hair);padding-right:12px}.facts div:nth-child(even){padding-left:12px!important}.facts div:nth-child(-n+4){border-bottom:1px solid var(--hair)}}
 /* JS-only hidden starts */
 .js .name .ln > span{transform:translateY(105%)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}#plot{display:none}}
@@ -609,13 +618,21 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
     <div class="intro-copy">
       <h3 class="intro-title lede big">A builder who thinks like an architect.</h3>
       <ol class="method" aria-label="How I work">
-        <li><span>01</span><b>Understand the people</b><em>Interviews, data, the real problem behind the ask</em></li>
-        <li><span>02</span><b>Get the structure right</b><em>Clear scope, the right system, no shortcuts that crack later</em></li>
-        <li><span>03</span><b>Ship it</b><em>Into production, measured, then made better</em></li>
+        <li><span>01</span><b>Understand the people</b><em>Interviews, data, the real problem behind the ask</em><small>200+ surveys and 30+ doctor interviews for Cura; 50+ user interviews at Refuel Tech</small></li>
+        <li><span>02</span><b>Get the structure right</b><em>Clear scope, the right system, no shortcuts that crack later</em><small>Modular GTM templates that cut duplication 40% at Frost &amp; Sullivan; RICE-prioritised MVPs</small></li>
+        <li><span>03</span><b>Ship it</b><em>Into production, measured, then made better</em><small>A 30,000-call campaign live within 24 hours; 40+ Voice AI launches across 20+ live accounts</small></li>
       </ol>
-      <div class="intro-cta"><p>Building something exciting?</p><a class="btn primary" href="#a800">Let’s connect</a></div>
+      <div class="intro-cta"><p>Building something exciting?</p><a class="btn primary" href="#a800">Let’s connect</a><a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></div>
     </div>
   </div>
+  <dl class="facts">
+    <div><dt>Now</dt><dd>AI Product Manager Intern, LimeChat, Bengaluru</dd></div>
+    <div><dt>Building</dt><dd>Cura HealthTech, a B2B2C healthcare platform</dd></div>
+    <div><dt>Studying</dt><dd>IIT Kharagpur, Bachelor’s with Honours, 2027</dd></div>
+    <div><dt>Recognised</dt><dd>Best All-Rounder Student Award, 1 of 2,000+</dd></div>
+    <div><dt>Toolkit</dt><dd>SQL, Python, JIRA, Figma, Power BI, Claude</dd></div>
+    <div><dt>Languages</dt><dd>English, Hindi, Marathi, Gujarati</dd></div>
+  </dl>
   <div class="verbs" id="verbs">
     <article class="verb" data-k="ships"><h3 class="vw" aria-label="Ships"><span>Ships</span></h3><div class="vproof"><b class="vnum" data-count="100" data-suffix="+">100+</b><p>Voice AI agents live at LimeChat across 6+ industries. I own delivery end to end, and was the first intern ever to win Employee of the Month.</p></div></article>
     <article class="verb" data-k="builds"><h3 class="vw" aria-label="Builds"><span>Builds</span></h3><div class="vproof"><b class="vnum" data-count="2000" data-suffix="+">2,000+</b><p>Pilot sessions for Cura HealthTech, which I founded with a CTO and COO. Three working prototypes, 200+ user surveys, 30+ doctor interviews.</p></div></article>
@@ -1111,6 +1128,7 @@ $$('.sheet-head').forEach(h=>{gsap.from(h,{'--x':0,duration:1,scrollTrigger:{tri
 gsap.from('.intro-photo img',{clipPath:'inset(100% 0 0 0)',duration:.9,ease:'expo.out',scrollTrigger:{trigger:'.intro',start:'top 80%'}});
 gsap.from('.method li',{y:8,opacity:0,stagger:.12,duration:.3,ease:'power3.out',scrollTrigger:{trigger:'.method',start:'top 85%'}});
 gsap.fromTo('.method',{'--draw':0},{'--draw':1,duration:.9,ease:'power2.out',scrollTrigger:{trigger:'.method',start:'top 85%'}});
+gsap.from('.facts div',{y:8,opacity:0,stagger:.05,duration:.3,ease:'power3.out',scrollTrigger:{trigger:'.facts',start:'top 90%'}});
 gsap.from('.intro-cta',{y:8,opacity:0,duration:.3,delay:.4,ease:'power3.out',scrollTrigger:{trigger:'.method',start:'top 85%'}});
 $$('.dimline').forEach(d=>{const k=parseFloat(d.style.getPropertyValue('--len'));const dl=$('.dl',d),et=$('.endtick',d),v=$('.val',d);const o={p:0},end=+v.dataset.count,suf=v.dataset.suffix||'';
   gsap.to(o,{p:1,duration:1.8,ease:'expo.out',scrollTrigger:{trigger:d,start:'top 85%'},onUpdate:()=>{const x=(o.p*k*100)+'%';dl.setAttribute('x2',x);et.setAttribute('x1',x);et.setAttribute('x2',x);v.textContent=fmt(Math.round(o.p*end))+suf}})});
