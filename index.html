@@ -443,7 +443,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .bld.now{border-width:2px}
 
 /* ===== v7: why hire me verbs ===== */
-.lede.big{font-size:clamp(28px,3.4vw,58px);line-height:1.08;font-weight:700;font-stretch:80%;max-width:20ch;letter-spacing:-.01em}
+.lede.big{font-size:clamp(36px,4.4vw,76px);line-height:1;font-weight:800;font-stretch:72%;max-width:16ch;letter-spacing:-.01em;color:var(--ink)}
 .lwrap{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em}
 .lw{display:inline-block}
 .verbs{margin-top:clamp(36px,4vw,60px);border-top:1.5px solid var(--ink)}
@@ -517,6 +517,22 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .sched tr.w0 td b{color:var(--ink)}
 @media (max-width:960px){.facade{grid-template-columns:1fr 1fr}.bay,.bay-cdc{grid-column:span 1;grid-row:auto}.bay-cdc{grid-column:1 / -1}}
 @media (max-width:560px){.facade{grid-template-columns:1fr}.bay-metrics{grid-template-columns:1fr 1fr}.bay-metrics div:nth-child(n+3){border-top:1px solid var(--hair)}}
+
+/* ===== v10: intro ===== */
+.intro{display:grid;grid-template-columns:minmax(200px,300px) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:stretch}
+.intro-photo{position:relative;margin:0}
+.intro-photo img{width:100%;height:100%;min-height:320px;object-fit:cover;object-position:50% 30%;display:block}
+.intro-copy{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(22px,3vw,40px)}
+.method{--draw:1;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);position:relative;border-top:1.5px solid var(--hair)}
+.method::before{content:"";position:absolute;left:0;top:-1.5px;height:1.5px;width:100%;background:var(--red);transform:scaleX(var(--draw));transform-origin:left}
+.method li{position:relative;padding:16px 18px 0 0}
+.method li::before{content:"";position:absolute;left:0;top:-6px;width:9px;height:9px;border-radius:50%;background:var(--sheet);border:1.5px solid var(--red)}
+.method span{display:block;font-family:var(--mono);font-size:12px;color:var(--red);margin-bottom:6px}
+.method b{display:block;font-size:clamp(19px,1.7vw,26px);font-weight:700;font-stretch:80%;line-height:1.1}
+.method em{display:block;font-style:normal;font-size:14px;color:var(--grey);line-height:1.45;margin-top:6px;max-width:28ch}
+.intro-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.intro-cta p{font-size:clamp(18px,1.5vw,22px);font-weight:600;font-stretch:88%}
+@media (max-width:860px){.intro{grid-template-columns:1fr}.intro-photo{max-width:240px}.intro-photo img{min-height:0;aspect-ratio:4/5;height:auto}.method{grid-template-columns:1fr}.method li{padding:14px 0 14px 22px;border-left:1.5px solid var(--hair)}.method li::before{left:-5.5px;top:18px}.method::before{display:none}}
 /* JS-only hidden starts */
 .js .name .ln > span{transform:translateY(105%)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}#plot{display:none}}
@@ -586,15 +602,19 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 <!-- A-100 BRIEF -->
 <section class="sheet" id="a100" data-no="A-100" data-nm="Why hire me">
   <div class="sheet-head"><h2>Why hire me</h2><span class="mono">A-100<br>The 60-second read</span></div>
-  <div class="brief">
-    <div class="copy">
-      <p class="lede big">I’m a builder who thinks like an architect: understand the people first, get the structure right, then ship. If you’re building something exciting, let’s connect.</p>
-      
-    </div>
-    <figure class="site">
+  <div class="intro">
+    <figure class="intro-photo">
       <img src="img/laughing.webp" alt="Heramb laughing in warm evening light">
-      <figcaption class="note">Easy to work with. Ask anyone I’ve shipped with.</figcaption>
     </figure>
+    <div class="intro-copy">
+      <h3 class="intro-title lede big">A builder who thinks like an architect.</h3>
+      <ol class="method" aria-label="How I work">
+        <li><span>01</span><b>Understand the people</b><em>Interviews, data, the real problem behind the ask</em></li>
+        <li><span>02</span><b>Get the structure right</b><em>Clear scope, the right system, no shortcuts that crack later</em></li>
+        <li><span>03</span><b>Ship it</b><em>Into production, measured, then made better</em></li>
+      </ol>
+      <div class="intro-cta"><p>Building something exciting?</p><a class="btn primary" href="#a800">Let’s connect</a></div>
+    </div>
   </div>
   <div class="verbs" id="verbs">
     <article class="verb" data-k="ships"><h3 class="vw" aria-label="Ships"><span>Ships</span></h3><div class="vproof"><b class="vnum" data-count="100" data-suffix="+">100+</b><p>Voice AI agents live at LimeChat across 6+ industries. I own delivery end to end, and was the first intern ever to win Employee of the Month.</p></div></article>
@@ -1088,7 +1108,10 @@ gsap.to('.fig .frame img',{yPercent:12,scale:1.1,ease:'none',scrollTrigger:{trig
 $$('.sheet-head').forEach(h=>{gsap.from(h,{'--x':0,duration:1,scrollTrigger:{trigger:h,start:'top 85%'}});gsap.from($('h2',h),{yPercent:60,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:h,start:'top 85%'}});gsap.fromTo(h,{borderBottomColor:'transparent'},{borderBottomColor:'#1B1E22',duration:1,scrollTrigger:{trigger:h,start:'top 85%'}})});
 
 /* brief: smile ellipse + dimension lines */
-gsap.from('.site img',{clipPath:'inset(0 100% 0 0)',duration:1.3,ease:'expo.inOut',scrollTrigger:{trigger:'.site',start:'top 80%'}});
+gsap.from('.intro-photo img',{clipPath:'inset(100% 0 0 0)',duration:.9,ease:'expo.out',scrollTrigger:{trigger:'.intro',start:'top 80%'}});
+gsap.from('.method li',{y:8,opacity:0,stagger:.12,duration:.3,ease:'power3.out',scrollTrigger:{trigger:'.method',start:'top 85%'}});
+gsap.fromTo('.method',{'--draw':0},{'--draw':1,duration:.9,ease:'power2.out',scrollTrigger:{trigger:'.method',start:'top 85%'}});
+gsap.from('.intro-cta',{y:8,opacity:0,duration:.3,delay:.4,ease:'power3.out',scrollTrigger:{trigger:'.method',start:'top 85%'}});
 $$('.dimline').forEach(d=>{const k=parseFloat(d.style.getPropertyValue('--len'));const dl=$('.dl',d),et=$('.endtick',d),v=$('.val',d);const o={p:0},end=+v.dataset.count,suf=v.dataset.suffix||'';
   gsap.to(o,{p:1,duration:1.8,ease:'expo.out',scrollTrigger:{trigger:d,start:'top 85%'},onUpdate:()=>{const x=(o.p*k*100)+'%';dl.setAttribute('x2',x);et.setAttribute('x1',x);et.setAttribute('x2',x);v.textContent=fmt(Math.round(o.p*end))+suf}})});
 
